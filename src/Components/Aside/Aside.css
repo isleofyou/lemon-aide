@@ -16,11 +16,12 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-start;
+      align-items: baseline;
   }
 
   .aside-item {
     height: 30px;
+    list-style: none;
   }
 
   .aside-item:hover {
@@ -29,37 +30,12 @@
     border-radius: 0;
   }
 
-  @media screen and (max-width: 960px) {
-      .aside-item {
-        position: relative;
-      }
-
-      .aside-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 90vh;
-        position: absolute;
-        top: 80px;
-        left: -100%;
-        opacity: 1;
-        transition: all 0.5s ease;
-      }
-
-      .aside-container.active {
-        background: #242222;
-        left: 0;
-        opacity: 1;
-        transition: all 0.5s ease;
-        z-index: 1;
-      }
-
-      .aside-links {
-            text-align: center;
-            padding: 2rem;
-            width: 100%;
-            display: table;
-          }
-
-
+  .aside-links {
+      list-style: none;
+      color: black;
+      text-decoration: none;
+      
   }
+
+
+
