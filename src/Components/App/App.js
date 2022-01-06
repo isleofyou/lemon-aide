@@ -1,13 +1,16 @@
 import './App.css';
 import Header from '../Header/Header';
-import { Component } from 'react/cjs/react.production.min';
+import { Component } from 'react';
 import Aside from '../Aside/Aside';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      products = [],
+      error: null
+    };
   }
 
   render() {
