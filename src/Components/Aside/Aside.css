@@ -1,0 +1,65 @@
+.aside {
+    background: white;
+    border: solid black 4px;
+    height: 100vh;
+    width: 20vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
+  .aside-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+  }
+
+  .aside-item {
+    height: 30px;
+  }
+
+  .aside-item:hover {
+    background-color: rgb(191, 17, 17);
+    color: #242424;
+    border-radius: 0;
+  }
+
+  @media screen and (max-width: 960px) {
+      .aside-item {
+        position: relative;
+      }
+
+      .aside-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 90vh;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+      }
+
+      .aside-container.active {
+        background: #242222;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+      }
+
+      .aside-links {
+            text-align: center;
+            padding: 2rem;
+            width: 100%;
+            display: table;
+          }
+
+
+  }
