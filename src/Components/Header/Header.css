@@ -1,0 +1,17 @@
+h1 {
+  font-size: 1.75em;
+  font: bold;
+}
+
+.header-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 72px;
+}
+
+.logo-img { 
+  height: 55px;
+  width: 55px;
+  margin-right: 16px;
+}
