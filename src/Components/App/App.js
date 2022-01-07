@@ -32,6 +32,7 @@ class App extends Component {
     return (
       <main>
         <Header />
+        <ProductsContainer products={this.state.products}/>
       </main>
     )
   }
