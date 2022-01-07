@@ -1,4 +1,5 @@
 import ProductCard from '../ProductCard/ProductCard';
+import './ProductsContainer.css';
 
 const ProductsContainer = ({ products }) => {
   const productCards = products.map(product => {
@@ -16,7 +17,7 @@ const ProductsContainer = ({ products }) => {
   });
 
   return (
-    <main className="Products-Container">
+    <main className="products-container">
       {productCards}
     </main> 
   );
