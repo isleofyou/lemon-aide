@@ -1,0 +1,42 @@
+.product-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 22px;
+}
+
+.product-image {
+  width: 20vh;
+  border-radius: 10px;
+}
+
+.product-color {
+  font-size: 13px;
+}
+
+.favorite-button, .unfavorite-button {
+  padding: 5px;
+  height: 40px;
+  width: 40px;
+  justify-self: end;
+}
+
+.favorite-button:hover, .unfavorite-button:hover {
+  transform: scale(1.1);
+}
+
+button {
+  margin-bottom: 22px;
+  background-color:#EDF2F4;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color:#EF233C;
+  transform: scale(1.1);
+}
