@@ -3,12 +3,9 @@ import Header from '../Header/Header';
 import { Component } from 'react';
 import Aside from '../Aside/Aside';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
-<<<<<<< HEAD
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-=======
 import { getAllProducts } from '../../apiCalls';
 
->>>>>>> 423ad0c2638114879e1fb6bf7b750bf0a6597768
 class App extends Component {
   constructor() {
     super();
@@ -34,25 +31,15 @@ class App extends Component {
 
   render = () => {
     return (
-<<<<<<< HEAD
-    <main>
       <Router>
-      <Header/>
-      <Aside />
-      <Routes>
-        
-      </Routes>
+        <main>
+          <Header />
+          <Aside />
+          <ProductsContainer products={this.state.products} />
+        </main>
       </Router>
-    </main>
-  )}
-=======
-      <main>
-        <Header />
-        <ProductsContainer products={this.state.products} />
-      </main>
     )
   }
->>>>>>> 423ad0c2638114879e1fb6bf7b750bf0a6597768
 };
 
 export default App;
