@@ -33,8 +33,8 @@ class App extends Component {
     return (
       <Router>
         <main>
-          <Header />
           <Aside />
+          <Header />
           <ProductsContainer products={this.state.products} />
         </main>
       </Router>
