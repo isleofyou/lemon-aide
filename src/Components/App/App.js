@@ -25,7 +25,7 @@ class App extends Component {
         const fetchedProducts = data[0];
         setTimeout(() => {
           this.setState({ products: fetchedProducts });
-        }, 4000);
+        }, 2000);
       })
       .catch(error => {
         this.setState({ error: error.message });
