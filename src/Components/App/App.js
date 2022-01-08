@@ -4,6 +4,7 @@ import { Component } from 'react';
 import Aside from '../Aside/Aside';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
 import Loading from '../Loading/Loading';
+import Error from '../Error/Error';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { getAllProducts } from '../../apiCalls';
 
@@ -44,13 +45,23 @@ class App extends Component {
     }
   }
 
+  errorRender = () => {
+    if (!this.state.error) {
+      return this.productRender();
+    } else {
+      return (
+        <Error error={this.state.error}/>
+      )
+    }
+  }
+
   render = () => {
     return (
       <Router>
         <main className='main-flex'>
           <Aside />
           <Header />
-          {this.productRender()}
+          {this.errorRender()}
         </main>
       </Router>
     )

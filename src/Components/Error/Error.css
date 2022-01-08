@@ -1,0 +1,23 @@
+.error-flex {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.error-img {
+  height: 375px;
+  width: 375px;
+}
+
+.error-text {
+  margin-top: 4px;
+  font-size: 1.5em;
+}
+
+.error-color {
+  color: #EF233C;
+  font-weight: bold;
+  margin: 0px;
+}
