@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import { Component } from 'react';
 import Aside from '../Aside/Aside';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { getAllProducts } from '../../apiCalls';
 
 class App extends Component {
@@ -30,10 +31,13 @@ class App extends Component {
 
   render = () => {
     return (
-      <main>
-        <Header />
-        <ProductsContainer products={this.state.products} />
-      </main>
+      <Router>
+        <main>
+          <Header />
+          <Aside />
+          <ProductsContainer products={this.state.products} />
+        </main>
+      </Router>
     )
   }
 };
