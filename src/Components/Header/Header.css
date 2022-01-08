@@ -1,0 +1,18 @@
+h1 {
+  font-size: 1.75em;
+  font: bold;
+}
+
+.header-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo-img { 
+  height: 40px;
+  width: 40px;
+  transform: rotate(180deg);
+  margin-right: 10px;
+}
