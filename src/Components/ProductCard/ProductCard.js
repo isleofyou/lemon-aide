@@ -29,14 +29,12 @@ const ProductCard = ({ id, name, color, img_url, category, favorite }) => {
         <h2 className="product-color">
           {color}
         </h2>
-        <button
-          className={category}
-        >
+        <button className={category}>
           Select {category}
         </button>
       </div>
     </article>
-  )
+  );
 }
 
 export default ProductCard;

@@ -25,14 +25,14 @@ class App extends Component {
       })
       .catch(error => {
         this.setState({ error: error.message });
-      })
+      });
   }
 
   render = () => {
     return (
       <main>
         <Header />
-        <ProductsContainer products={this.state.products}/>
+        <ProductsContainer products={this.state.products} />
       </main>
     )
   }

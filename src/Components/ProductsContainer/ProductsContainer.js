@@ -13,7 +13,7 @@ const ProductsContainer = ({ products }) => {
         category={product.category}
         favorite={product.favorite}
       />
-    )
+    );
   });
 
   return (
