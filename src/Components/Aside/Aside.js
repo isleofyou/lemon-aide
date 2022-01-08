@@ -1,37 +1,50 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState } from 'react';
 import { Link } from 'react-router-dom';
+import * as GiIcons from 'react-icons/gi';
+import * as AiIcons from 'react-icons/ai';
 import './Aside.css';
+import { IconContext } from 'react-icons/lib';
+import { AsideData } from './AsideData';
 
 const Aside = () => {
+  const [shown, setShown] = useState(false);
+
+
+  const toggleSidebar = () => {
+    setShown(!shown);
+  };
+
 
     return (
-        <>
-          <nav className='aside'>
-              <div className='aside-container'>
-                  <li className='aside-item'>
-                    <Link to='/all-products' className='aside-links'>
-                      All Items
+      <>
+        <IconContext.Provider value={{ color: '#000000' }}>
+          <div className='sidebar'>
+            <Link to='#' className='menu-bars'>
+              <GiIcons.GiHamburgerMenu onClick ={toggleSidebar} />
+            </Link>
+          </div>
+          <nav className={shown ? 'aside active' : 'aside'}>
+            <ul className='aside-menu-items' onClick={toggleSidebar}>
+              <li className='sidebar-toggle'>
+                <Link to='#' className='menu-bars'>
+                  <AiIcons.AiOutlineCloseCircle />
+                </Link>
+              </li>
+              {AsideData.map((item, index) => {
+                return (
+                  <li key={index} className={item.className}>
+                    <Link to={item.path}>
+                      {item.icon}
+                      <span>{item.title}</span>
                     </Link>
                   </li>
-                  <li className='aside-item'>
-                    <Link to='/favorite-product' className='aside-links'>
-                      Favorites
-                    </Link>
-                  </li>
-                  <li className='aside-item'>
-                    <Link to='/create-outfit' className='aside-links' >
-                      Create Outfit
-                    </Link>
-                  </li>
-                  <li className='aside-item'>
-                    <Link to='/my-outfits' className='aside-links'>
-                      My Outfits
-                    </Link>
-                  </li>
-              </div>
+                );
+              })}
+            </ul>
           </nav>
-        </>
+        </IconContext.Provider>
+      </>
     )
-}
+  }
 
 export default Aside;
