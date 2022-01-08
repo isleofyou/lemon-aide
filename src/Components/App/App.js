@@ -4,7 +4,7 @@ import { Component } from 'react';
 import Aside from '../Aside/Aside';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { getAllProducts } from '../../apiCalls';
+import { getAllProducts, updateFavorite } from '../../apiCalls';
 
 class App extends Component {
   constructor() {
@@ -29,13 +29,28 @@ class App extends Component {
       });
   }
 
+  addFavorite = (id) => {
+    return updateFavorite(id)
+      .then(data => {
+        console.log(data);
+        //map over state and update the one data object, assign that variable to state
+        this.setState({ products: data});
+      })
+      .catch(error => {
+        this.setState({ error: error.message });
+      });
+  }
+
   render = () => {
     return (
       <Router>
         <main>
-          <Header />
           <Aside />
-          <ProductsContainer products={this.state.products} />
+          <Header />
+          <ProductsContainer 
+            products={this.state.products} 
+            addFavorite={this.addFavorite}
+          />
         </main>
       </Router>
     )
