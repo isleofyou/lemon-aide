@@ -32,10 +32,17 @@ class App extends Component {
       });
   }
 
+  addFavorite = ({id}) => {
+    const newFavoriteIndex = this.state.products.findIndex(product => id === product.id);
+    let updatedState = [...this.state.products];
+    updatedState[newFavoriteIndex].favorite = !updatedState[newFavoriteIndex].favorite;
+    this.setState({ products: updatedState })
+  }
+
   productRender = () => {
     if (this.state.products.length > 0) {
       return (
-        <ProductsContainer products={this.state.products} />
+        <ProductsContainer products={this.state.products} addFavorite={this.addFavorite} />
       )
     } else {
       return (
