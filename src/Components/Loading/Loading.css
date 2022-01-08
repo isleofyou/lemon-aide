@@ -1,0 +1,23 @@
+.loading-img {
+  height: 250px;
+  width: 250px;
+}
+
+.loading-flex {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.rotation {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
