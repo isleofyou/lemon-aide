@@ -9,11 +9,9 @@ import { AsideData } from './AsideData';
 const Aside = () => {
   const [shown, setShown] = useState(false);
 
-
   const toggleSidebar = () => {
     setShown(!shown);
   };
-
 
     return (
       <>
