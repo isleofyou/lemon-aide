@@ -32,4 +32,22 @@ describe('Lemon-aide dashboard test', () => {
       .get('button')
       .should('have.length', 3);
   });
+
+  it('As a user when I visit the homepage I should see collapsible nav bar', () => {
+    cy.get('div[class="sidebar"]')
+      .should('have.length', 1)
+  });
+
+  it('As a user when I visit the home page and click on the collapsible nav bar I should see a nav menu and be able to close it', () => {
+    cy.get('div[class="sidebar"]')
+    .click()
+    .get('nav[class="aside active"]')
+    .should('have.length', 1)
+    .get('li[class="aside-items"]')
+    .should('have.length', 4)
+    .get('li[class="sidebar-toggle"]')
+    .click()
+    .get('nav[class="aside"]')
+    .should('have.length', 1)
+  })
 });

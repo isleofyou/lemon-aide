@@ -6,7 +6,7 @@
 
 .sidebar {
   background-color: #EDF2F4;
-  height: 0px;
+  height: 1px;
   display: flex;
   justify-content: start;
   align-items: center;
