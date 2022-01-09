@@ -1,6 +1,6 @@
 import ProductCard from '../ProductCard/ProductCard';
 import './FavoritesContainer.css';
-import Loading from '../Loading/Loading';
+import brokenHeart from '../../assets/broken-heart.png';
 
 const FavoritesContainer = ({ favorites, addFavorite }) => {
   const productCards = favorites.map(product => {
@@ -23,7 +23,11 @@ const FavoritesContainer = ({ favorites, addFavorite }) => {
       <main className="favorites-container">
         {productCards}
       </main> 
-    : <Loading />
+    : <div className="no-favorites">
+        <img className="heart-picture" src={brokenHeart} alt="broken heart" />
+        <h3>Add favorites to see them here.</h3>
+      </div>
+    
   );
 }
 
