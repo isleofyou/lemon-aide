@@ -6,8 +6,8 @@ export default function Error({ error }) {
   return (
     <div className='error-container'>
       <img className='error-img' src={errorImg} alt='robot'/>
-      <div className='error-text'>Whoops! </div>
-      <div className='error-message'> <span className='error-color'>{error}</span></div>
+      <p className='error-text'>Whoops! </p>
+      <p className='error-message'> <span className='error-color'>{error}</span></p>
     </div>
   )
 }
