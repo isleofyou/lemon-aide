@@ -3,6 +3,11 @@ describe('Lemon-aide dashboard test', () => {
     cy.intercept('GET', '/api/v1/all-products', {
       fixture: 'products.json'
     });
+    cy.intercept('GET', '/api/v1/favorites', {
+      body: {
+        favorites: [],
+      }
+    })
     cy.visit('http://localhost:3000');
   })
 
@@ -48,6 +53,27 @@ describe('Lemon-aide dashboard test', () => {
     .get('li[class="sidebar-toggle"]')
     .click()
     .get('nav[class="aside"]')
-    .should('have.length', 1)
-  })
+    .should('have.length', 1);
+  });
+
+  it.only('As a user when I click the favorite button it should visually update', () => {
+    cy.intercept('PUT', '/api/v1/favorites/1', {
+      body: {
+        result: {
+          "name": "Sculpt Tank",
+          "color": "Rainforest Green",
+          "img_url": "https://images.lululemon.com/is/image/lululemon/LW1CS9S_049106_1?wid=1080&op_usm=0.5,2,10,0&fmt=webp&qlt=80,1&fit=constrain,0&op_sharpen=0&resMode=sharp2&iccEmbed=0&printRes=72",
+          "category": "top",
+          "id": 1,
+          "favorite": true
+        }
+      }
+    })
+
+    cy.get('div[class="product-card-container"]')
+      .get('img[class="unfavorite-button"]')
+      .first()
+      .click()
+      // .contains('Sculpt Tank')
+  });
 });
