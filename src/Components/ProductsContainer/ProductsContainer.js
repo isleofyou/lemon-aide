@@ -1,5 +1,6 @@
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductsContainer.css';
+import Loading from '../Loading/Loading';
 
 const ProductsContainer = ({ products, addFavorite }) => {
   const productCards = products.map(product => {
@@ -18,9 +19,12 @@ const ProductsContainer = ({ products, addFavorite }) => {
   });
 
   return (
-    <main className="products-container">
-      {productCards}
-    </main> 
+    products.length ? 
+      <main className="products-container">
+        {productCards}
+      </main> 
+    :
+      <Loading />
   );
 }
 
