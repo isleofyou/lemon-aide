@@ -8,6 +8,23 @@ const getAllProducts = () => {
     });
 }
 
+const updateFavorite = (id) => {
+  return fetch(`http://localhost:3001/api/v1/favorites/${id.id}`, {
+    method: 'PUT',
+    body: JSON.stringify(id),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
+      return response.json();
+    });
+}
+
 module.exports = {
-  getAllProducts
+  getAllProducts, 
+  updateFavorite
 }

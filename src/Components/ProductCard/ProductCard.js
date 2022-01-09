@@ -2,7 +2,7 @@ import "../ProductCard/ProductCard.css";
 import heart from '../../assets/transparent-heart.jpeg';
 import faveHeart from '../../assets/red-heart.png';
 
-const ProductCard = ({ id, name, color, img_url, category, favorite }) => {
+const ProductCard = ({ id, name, color, img_url, category, favorite, addFavorite }) => {
   return (
     <article className="product-card">
       <div className="product-card-container">
@@ -11,11 +11,7 @@ const ProductCard = ({ id, name, color, img_url, category, favorite }) => {
           src={ favorite ? faveHeart: heart }
           className={ favorite ? "favorite-button": "unfavorite-button" }
           onClick={() => {
-            if (favorite) {
-              //remove from favorites via id
-            } else {
-              //add to favorites via id
-            }
+            addFavorite({ id: id });
           }}
         />
         <img 
