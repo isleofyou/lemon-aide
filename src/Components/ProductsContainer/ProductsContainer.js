@@ -23,8 +23,7 @@ const ProductsContainer = ({ products, addFavorite }) => {
       <main className="products-container">
         {productCards}
       </main> 
-    :
-      <Loading />
+    : <Loading />
   );
 }
 
