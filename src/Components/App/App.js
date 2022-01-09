@@ -58,20 +58,31 @@ class App extends Component {
       this.state.error !== null ?
         <Error error={this.state.error} />
       :
-      <Router>
-        <main>
-          <Aside showFavorites={this.showFavorites}/>
-          <Header />
-          <ProductsContainer 
-            products={this.state.products} 
-            addFavorite={this.addFavorite} 
+    <>
+      <Aside />
+      <Header />  
+      <Routes>
+
+          <Route path ='/' element={ 
+            <main className='main-page'>
+              <ProductsContainer 
+                products={this.state.products} 
+                addFavorite={this.addFavorite} 
+                />
+            </main>
+          }
           />
-          <FavoritesContainer 
-            favorites={this.state.favorites} 
-            addFavorite={this.addFavorite}
-          />
-        </main>
-      </Router>
+        <Route path='/api/v1/favorites' element ={
+          <main>  
+            <FavoritesContainer 
+              favorites={this.state.favorites} 
+              addFavorite={this.addFavorite}
+            />
+          </main>
+        }
+        />
+      </Routes>
+    </>
     )
   }
 };
