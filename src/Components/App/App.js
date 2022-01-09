@@ -56,7 +56,6 @@ class App extends Component {
       :
       <Router>
         <main>
-          <Aside />
           <Header />
           <ProductsContainer 
             products={this.state.products} 
