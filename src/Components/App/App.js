@@ -3,6 +3,7 @@ import Header from '../Header/Header';
 import { Component } from 'react';
 import Aside from '../Aside/Aside';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
+import Error from '../Error/Error';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { getAllProducts, updateFavorite } from '../../apiCalls';
 
@@ -54,7 +55,7 @@ class App extends Component {
         <Error error={this.state.error} />
       :
       <Router>
-        <main className='main-flex'>
+        <main>
           <Aside />
           <Header />
           <ProductsContainer 
