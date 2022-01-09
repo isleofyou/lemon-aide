@@ -19,7 +19,7 @@ const ProductsContainer = ({ products, addFavorite }) => {
   });
 
   return (
-    products.length ? 
+    productCards.length ? 
       <main className="products-container">
         {productCards}
       </main> 
