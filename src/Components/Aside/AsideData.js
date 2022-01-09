@@ -10,7 +10,7 @@ export const AsideData = [
   },
   {
     title: 'Favorites',
-    path: '/favorites',
+    path: '/api/v1/favorites',
     icon: <GiIcons.GiHearts />,
     className: 'aside-items'
   },
