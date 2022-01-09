@@ -3,9 +3,9 @@ import Header from '../Header/Header';
 import { Component } from 'react';
 import Aside from '../Aside/Aside';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
-import Loading from '../Loading/Loading';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { getAllProducts, updateFavorite } from '../../apiCalls';
+//import Error component here
 
 class App extends Component {
   constructor() {
@@ -48,25 +48,19 @@ class App extends Component {
       });
   }
 
-  productRender = () => {
-    if (this.state.products.length > 0) {
-      return (
-        <ProductsContainer products={this.state.products} addFavorite={this.addFavorite} />
-      )
-    } else {
-      return (
-        <Loading />
-      )
-    }
-  }
-
   render = () => {
     return (
+      this.state.error !== null ?
+        <Error error={this.state.error} />
+      :
       <Router>
         <main className='main-flex'>
           <Aside />
           <Header />
-          {this.productRender()}
+          <ProductsContainer 
+            products={this.state.products} 
+            addFavorite={this.addFavorite} 
+          />
         </main>
       </Router>
     )
