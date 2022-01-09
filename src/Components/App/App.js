@@ -4,7 +4,6 @@ import { Component } from 'react';
 import Aside from '../Aside/Aside';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
-
 import Error from '../Error/Error';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { getAllProducts, updateFavorite, getFavorites } from '../../apiCalls';
@@ -14,8 +13,8 @@ class App extends Component {
     super();
     this.state = {
       products: [],
-      error: null,
-      favorites: []
+      favorites: [],
+      error: null
     };
   }
 
@@ -62,28 +61,27 @@ class App extends Component {
       <Aside />
       <Header />  
       <Routes>
-
           <Route path ='/' element={ 
             <main className='main-page'>
               <ProductsContainer 
                 products={this.state.products} 
                 addFavorite={this.addFavorite} 
-                />
+              />
             </main>
           }
           />
-        <Route path='/api/v1/favorites' element ={
-          <main>  
-            <FavoritesContainer 
-              favorites={this.state.favorites} 
-              addFavorite={this.addFavorite}
-            />
-          </main>
-        }
-        />
+          <Route path='/api/v1/favorites' element ={
+            <main>  
+              <FavoritesContainer 
+                favorites={this.state.favorites} 
+                addFavorite={this.addFavorite}
+              />
+            </main>
+          }
+          />
       </Routes>
     </>
-    )
+    );
   }
 };
 
