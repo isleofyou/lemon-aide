@@ -21,22 +21,31 @@ class App extends Component {
     
     Promise.all([allProducts])
       .then(data => {
-        console.log(data)
         const fetchedProducts = data[0];
-        setTimeout(() => {
-          this.setState({ products: fetchedProducts });
-        }, 2000);
+        this.setState({ products: fetchedProducts });
       })
       .catch(error => {
         this.setState({ error: error.message });
       });
   }
 
-  addFavorite = ({id}) => {
-    const newFavoriteIndex = this.state.products.findIndex(product => id === product.id);
-    let updatedState = [...this.state.products];
-    updatedState[newFavoriteIndex].favorite = !updatedState[newFavoriteIndex].favorite;
-    this.setState({ products: updatedState })
+  addFavorite = (id) => {
+    return updateFavorite(id)
+      .then(updatedProduct => {
+        const updatedProducts = this.state.products.map(product => {
+          if (product.id === updatedProduct.id) {
+            const currentProductInState = product;
+            currentProductInState.favorite = updatedProduct.favorite;
+            return currentProductInState;
+          }
+          return product;
+        });
+
+        this.setState({ products: updatedProducts});
+      })
+      .catch(error => {
+        this.setState({ error: error.message });
+      });
   }
 
   productRender = () => {
