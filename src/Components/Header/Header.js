@@ -5,7 +5,7 @@ import Aside from '../Aside/Aside';
 
 const Header = () => {
   return (
-    <header className='header-flex'>
+    <header className='header-container'>
       <Aside />
       <img className='logo-img' alt='Lulu Lemon Logo' src={logo}/>
       <h1>Lemon Aide</h1>

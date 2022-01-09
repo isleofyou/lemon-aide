@@ -3,7 +3,7 @@ h1 {
   font: bold;
 }
 
-.header-flex {
+.header-container {
   display: flex;
   flex-direction: row;
   align-items: center;
