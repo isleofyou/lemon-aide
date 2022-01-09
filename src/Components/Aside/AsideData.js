@@ -15,12 +15,6 @@ export const AsideData = [
     className: 'aside-items'
   },
   {
-    title: 'Create Outfit',
-    path: '/created-outfits',
-    icon: <GiIcons.GiStarsStack />,
-    className: 'aside-items'
-  },
-  {
     title: 'My Outfits',
     path: '/my-outfits',
     icon: <GiIcons.GiHanger />,
