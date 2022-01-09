@@ -6,7 +6,7 @@ import ProductsContainer from '../ProductsContainer/ProductsContainer';
 import Loading from '../Loading/Loading';
 import Error from '../Error/Error';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { getAllProducts } from '../../apiCalls';
+import { getAllProducts, updateFavorite } from '../../apiCalls';
 
 class App extends Component {
   constructor() {
@@ -33,35 +33,28 @@ class App extends Component {
       });
   }
 
-  productRender = () => {
-    if (this.state.products.length > 0) {
-      return (
-        <ProductsContainer products={this.state.products} />
-      )
-    } else {
-      return (
-        <Loading />
-      )
-    }
-  }
-
-  errorRender = () => {
-    if (!this.state.error) {
-      return this.productRender();
-    } else {
-      return (
-        <Error error={this.state.error}/>
-      )
-    }
+  addFavorite = (id) => {
+    return updateFavorite(id)
+      .then(data => {
+        console.log(data);
+        //map over state and update the one data object, assign that variable to state
+        this.setState({ products: data});
+      })
+      .catch(error => {
+        this.setState({ error: error.message });
+      });
   }
 
   render = () => {
     return (
       <Router>
-        <main className='main-flex'>
+        <main>
           <Aside />
           <Header />
-          {this.errorRender()}
+          <ProductsContainer 
+            products={this.state.products} 
+            addFavorite={this.addFavorite}
+          />
         </main>
       </Router>
     )

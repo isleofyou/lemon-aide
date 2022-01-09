@@ -1,7 +1,7 @@
 import ProductCard from '../ProductCard/ProductCard';
 import './ProductsContainer.css';
 
-const ProductsContainer = ({ products }) => {
+const ProductsContainer = ({ products, addFavorite }) => {
   const productCards = products.map(product => {
     return (
       <ProductCard 
@@ -12,6 +12,7 @@ const ProductsContainer = ({ products }) => {
         img_url={product.img_url}
         category={product.category}
         favorite={product.favorite}
+        addFavorite={addFavorite}
       />
     );
   });
