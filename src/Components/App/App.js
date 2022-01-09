@@ -5,7 +5,6 @@ import Aside from '../Aside/Aside';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { getAllProducts, updateFavorite } from '../../apiCalls';
-//import Error component here
 
 class App extends Component {
   constructor() {
@@ -47,6 +46,7 @@ class App extends Component {
         this.setState({ error: error.message });
       });
   }
+
 
   render = () => {
     return (
