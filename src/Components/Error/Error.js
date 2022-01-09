@@ -1,6 +1,6 @@
-import React from 'react'
-import './Error.css'
-import errorImg from '../../assets/errorbot.png'
+import React from 'react';
+import './Error.css';
+import errorImg from '../../assets/errorbot.png';
 
 export default function Error({ error }) {
   return (
