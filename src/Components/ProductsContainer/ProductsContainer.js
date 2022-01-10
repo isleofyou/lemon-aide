@@ -6,9 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 const ProductsContainer = ({ products, addFavorite }) => {
   let location = useLocation();
-  console.log('location 1', location);
-  //if location.pathname === "/" => render usual w/Loading component
-  //if location.pathname === "/api/v1/favorites" => render w/broken heart div
+
   const productCards = products.map(product => {
     return (
       <ProductCard 
@@ -24,24 +22,28 @@ const ProductsContainer = ({ products, addFavorite }) => {
     );
   });
 
-  return (
-    location.pathname === "/" ?
-      productCards.length ?
-        <main className="products-container">
-          {productCards}
-        </main> 
-      : <Loading />
-    : 
-      productCards.length && products.every(product => product.favorite) ?
-        <main className="favorite-products-container">
-          {productCards}
-        </main> 
-    : <div className="no-favorites">
-        <img className="heart-picture" src={brokenHeart} alt="broken heart" />
+  if (location.pathname === '/' && !productCards.length) {
+    return (
+      <Loading />
+    );
+  } else if (location.pathname === '/favorites' && !productCards.length) {
+    return (
+      <div className="no-favorites">
+        <img 
+          className="heart-picture" 
+          src={brokenHeart} 
+          alt="broken heart" 
+        />
         <h3>Add favorites to see them here.</h3>
       </div>
-
-  );
+    );
+  } else if (productCards.length) {
+    return (
+      <main className="products-container">
+        {productCards}
+      </main> 
+    );
+  }
 }
 
 export default ProductsContainer;
