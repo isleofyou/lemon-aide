@@ -1,10 +1,10 @@
-import './App.css';
-import Header from '../Header/Header';
 import { Component } from 'react';
+import { getAllProducts, updateFavorite } from '../../apiCalls';
+import { Routes, Route } from 'react-router-dom';
+import Header from '../Header/Header';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
 import Error from '../Error/Error';
-import { Routes, Route } from 'react-router-dom';
-import { getAllProducts, updateFavorite } from '../../apiCalls';
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -64,7 +64,7 @@ class App extends Component {
             </main>
           }
           />
-          <Route path='/api/v1/favorites' element ={
+          <Route path='/favorites' element ={
             <main>  
               <ProductsContainer 
                 products={this.state.products.filter(product => product.favorite)} 
