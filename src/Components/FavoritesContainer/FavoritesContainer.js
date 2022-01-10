@@ -2,8 +2,8 @@ import ProductCard from '../ProductCard/ProductCard';
 import './FavoritesContainer.css';
 import brokenHeart from '../../assets/broken-heart.png';
 
-const FavoritesContainer = ({ favorites, addFavorite }) => {
-  const productCards = favorites.map(product => {
+const FavoritesContainer = ({ products, addFavorite }) => {
+  const productCards = products.map(product => {
     return (
       <ProductCard 
         key={product.id}
