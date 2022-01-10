@@ -40,7 +40,7 @@ describe('Lemon-aide dashboard test', () => {
 
   it('As a user when I visit the homepage I should see collapsible nav bar', () => {
     cy.get('div[class="sidebar"]')
-      .should('have.length', 1)
+      .should('have.length', 1);
   });
 
   it('As a user when I visit the home page and click on the collapsible nav bar I should see a nav menu and be able to close it', () => {
@@ -75,7 +75,7 @@ describe('Lemon-aide dashboard test', () => {
       .first()
       .click()
       .get('img[class="favorite-button"]')
-      .should('have.class', "favorite-button")
+      .should('have.class', "favorite-button");
   });
 
   it('As a user, when I click on a red heart of a favorited product it should show an outline of a heart to indicate that the product has now been unfavorited', () => {
@@ -96,9 +96,7 @@ describe('Lemon-aide dashboard test', () => {
       .get('img[class="favorite-button"]')
       .click()
       .get('img[class="unfavorite-button"]')
-      .should('have.length', 3)
+      .should('have.length', 3);
   });
-
-
 
 });
