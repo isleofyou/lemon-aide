@@ -27,7 +27,7 @@ describe('Lemon-aide dashboard test', () => {
 
     cy.get('article[class="product-card"]')
       .get('img[class="unfavorite-button"]')
-      .should('have.length', 3)
+      .should('have.length', 2)
       .get('img[class="product-image"]')
       .should('have.length', 3)
       .get('h2[class="product-name"]')
