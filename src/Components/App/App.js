@@ -1,31 +1,28 @@
 import './App.css';
 import Header from '../Header/Header';
 import { Component } from 'react';
-import Aside from '../Aside/Aside';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
 import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 import Error from '../Error/Error';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { getAllProducts, updateFavorite, getFavorites } from '../../apiCalls';
+import { Routes, Route } from 'react-router-dom';
+import { getAllProducts, updateFavorite } from '../../apiCalls';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       products: [],
-      favorites: [],
       error: null
     };
   }
 
   componentDidMount = () => {
     const allProducts = getAllProducts();
-    const allFavoriteProducts = getFavorites();
-    Promise.all([allProducts, allFavoriteProducts])
+
+    Promise.all([allProducts])
       .then(data => {
         const fetchedProducts = data[0];
-        const fetchedFavorites = data[1];
-        this.setState({ products: fetchedProducts, favorites: fetchedFavorites });
+        this.setState({ products: fetchedProducts });
       })
       .catch(error => {
         this.setState({ error: error.message });
@@ -43,9 +40,8 @@ class App extends Component {
           }
           return product;
         });
-        const updatedFavorites = updatedProducts.filter(product => product.favorite);
 
-        this.setState({ products: updatedProducts, favorites: updatedFavorites});
+        this.setState({ products: updatedProducts });
       })
       .catch(error => {
         this.setState({ error: error.message });
@@ -72,8 +68,8 @@ class App extends Component {
           <Route path='/api/v1/favorites' element ={
             <main>  
               <FavoritesContainer 
-                favorites={this.state.favorites} 
-                addFavorite={this.addFavorite}
+                products={this.state.products.filter(product => product.favorite)} 
+                addFavorite={this.addFavorite} 
               />
             </main>
           }
