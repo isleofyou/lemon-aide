@@ -2,7 +2,6 @@ import './App.css';
 import Header from '../Header/Header';
 import { Component } from 'react';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
-import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 import Error from '../Error/Error';
 import { Routes, Route } from 'react-router-dom';
 import { getAllProducts, updateFavorite } from '../../apiCalls';
@@ -67,7 +66,7 @@ class App extends Component {
           />
           <Route path='/api/v1/favorites' element ={
             <main>  
-              <FavoritesContainer 
+              <ProductsContainer 
                 products={this.state.products.filter(product => product.favorite)} 
                 addFavorite={this.addFavorite} 
               />
