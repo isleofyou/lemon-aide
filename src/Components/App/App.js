@@ -1,31 +1,27 @@
-import './App.css';
-import Header from '../Header/Header';
 import { Component } from 'react';
-import Aside from '../Aside/Aside';
+import { getAllProducts, updateFavorite } from '../../apiCalls';
+import { Routes, Route } from 'react-router-dom';
+import Header from '../Header/Header';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
-import FavoritesContainer from '../FavoritesContainer/FavoritesContainer';
 import Error from '../Error/Error';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { getAllProducts, updateFavorite, getFavorites } from '../../apiCalls';
+import './App.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       products: [],
-      favorites: [],
       error: null
     };
   }
 
   componentDidMount = () => {
     const allProducts = getAllProducts();
-    const allFavoriteProducts = getFavorites();
-    Promise.all([allProducts, allFavoriteProducts])
+
+    Promise.all([allProducts])
       .then(data => {
         const fetchedProducts = data[0];
-        const fetchedFavorites = data[1];
-        this.setState({ products: fetchedProducts, favorites: fetchedFavorites });
+        this.setState({ products: fetchedProducts });
       })
       .catch(error => {
         this.setState({ error: error.message });
@@ -36,16 +32,15 @@ class App extends Component {
     return updateFavorite(id)
       .then(updatedProduct => {
         const updatedProducts = this.state.products.map(product => {
-          if (product.id === updatedProduct.id) {
+          if (product.id === updatedProduct.result.id) {
             const currentProductInState = product;
-            currentProductInState.favorite = updatedProduct.favorite;
+            currentProductInState.favorite = updatedProduct.result.favorite;
             return currentProductInState;
           }
           return product;
         });
-        const updatedFavorites = updatedProducts.filter(product => product.favorite);
 
-        this.setState({ products: updatedProducts, favorites: updatedFavorites});
+        this.setState({ products: updatedProducts });
       })
       .catch(error => {
         this.setState({ error: error.message });
@@ -57,10 +52,9 @@ class App extends Component {
       this.state.error !== null ?
         <Error error={this.state.error} />
       :
-    <>
-      <Aside />
-      <Header />  
-      <Routes>
+      <>
+        <Header />  
+        <Routes>
           <Route path ='/' element={ 
             <main className='main-page'>
               <ProductsContainer 
@@ -70,17 +64,17 @@ class App extends Component {
             </main>
           }
           />
-          <Route path='/api/v1/favorites' element ={
+          <Route path='/favorites' element ={
             <main>  
-              <FavoritesContainer 
-                favorites={this.state.favorites} 
-                addFavorite={this.addFavorite}
+              <ProductsContainer 
+                products={this.state.products.filter(product => product.favorite)} 
+                addFavorite={this.addFavorite} 
               />
             </main>
           }
           />
-      </Routes>
-    </>
+        </Routes>
+      </>
     );
   }
 };

@@ -1,15 +1,16 @@
 .menu-bars {
-  margin-left: 1rem;
   font-size: 2rem;
   background: none;
 }
 
 .sidebar {
   background-color: #EDF2F4;
-  height: 0px;
+  height: 1px;
   display: flex;
   justify-content: start;
-  align-items: flex-start;
+  align-items: center;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
 .aside {
@@ -64,4 +65,7 @@ span {
 
 .sidebar-toggle {
   list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px;
 }

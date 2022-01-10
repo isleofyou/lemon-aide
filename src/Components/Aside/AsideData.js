@@ -10,14 +10,8 @@ export const AsideData = [
   },
   {
     title: 'Favorites',
-    path: '/api/v1/favorites',
+    path: '/favorites',
     icon: <GiIcons.GiHearts />,
-    className: 'aside-items'
-  },
-  {
-    title: 'Create Outfit',
-    path: '/created-outfits',
-    icon: <GiIcons.GiStarsStack />,
     className: 'aside-items'
   },
   {
