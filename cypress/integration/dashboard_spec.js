@@ -49,7 +49,7 @@ describe('Lemon-aide dashboard test', () => {
     .get('nav[class="aside active"]')
     .should('have.length', 1)
     .get('li[class="aside-items"]')
-    .should('have.length', 4)
+    .should('have.length', 3)
     .get('li[class="sidebar-toggle"]')
     .click()
     .get('nav[class="aside"]')
