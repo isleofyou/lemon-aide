@@ -4,3 +4,22 @@
   grid-gap: 1rem;
   padding: 20px;
 }
+
+.favorite-products-container {
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+  padding: 20px;
+}
+ 
+.no-favorites {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-picture {
+  height: 40px;
+  margin: 10px;
+}
