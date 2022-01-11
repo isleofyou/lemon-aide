@@ -56,6 +56,22 @@ class App extends Component {
       });
   }
 
+  addItemToOutfit = (category, id) => {
+    category = category + '_id';
+    if (!this.state.outfitItems[category]) {
+      const updatedOutfitItems = {...this.state.outfitItems};
+      updatedOutfitItems[category] = id;
+      this.setState({ outfitItems: updatedOutfitItems });
+    }
+  }
+
+  addOutfit = () => {
+    return addNewOutfit(this.state.outfitItems)
+      .then(data => {
+        console.log(`data from backend endpoint:`, addNewOutfit)
+      })
+  }
+
   render = () => {
     return (
       this.state.error !== null ?
@@ -69,6 +85,8 @@ class App extends Component {
               <ProductsContainer 
                 products={this.state.products} 
                 addFavorite={this.addFavorite} 
+                addItemToOutfit={this.addItemToOutfit}
+                addOutfit={this.addOutfit}
               />
             </main>
           }
@@ -79,6 +97,7 @@ class App extends Component {
                 products={this.state.products.filter(product => product.favorite)} 
                 addFavorite={this.addFavorite} 
                 addItemToOutfit={this.addItemToOutfit}
+                addOutfit={this.addOutfit}
               />
             </main>
           }
