@@ -1,23 +1,16 @@
-import React, { Component } from 'react'
-import './CartDropdown.css'
-import CartItem from '../CartItem/CartItem'
+import React from 'react';
+import './CartDropdown.css';
 
-export default class CartDropdown extends Component {
-  constructor() {
-    super()
-  }
 
-  render() {
+const CartDropdown = ({toggleCartHidden}) => {
     return (
+    <>
       <div className='cart-dropdown'>
-      <div className='cart-items'>
-          {
-           this.props.cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem}/>
-           )
-          }
-      </div>
-      <button className='checkout-button'>GO TO CHECKOUT</button>
+        <button onClick={() => toggleCartHidden()}>x</button>
+      <button className='checkout-button'>CREATE OUTFIT</button>
   </div>
+    </>
     )
   }
-}
+
+  export default CartDropdown;

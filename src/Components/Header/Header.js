@@ -19,7 +19,7 @@ const Header = () => {
       <h1>Lemon Aide</h1>
       <CartIcon toggleCartHidden={toggleCartHidden}/>
       {
-        hidden ? null: <CartDropdown cartItems={[]}/>
+        hidden ? null : <CartDropdown cartItems={[]} toggleCartHidden={toggleCartHidden}/>
       }
     </header>
   )
