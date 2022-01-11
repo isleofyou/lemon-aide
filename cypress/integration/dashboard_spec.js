@@ -99,4 +99,16 @@ describe('Lemon-aide dashboard test', () => {
       .should('have.length', 3);
   });
 
+  it.only('As a user when I click favorites from the collapsable nav bar it should only show me my favorite', () => {
+    cy.get('div[class="sidebar"]')
+    .click()
+    .get('a[href="/favorites"]')
+    .click()
+    .url()
+      .should('include', '/favorites')
+    .get('main[class="products-container"]')
+    .get('article[class="product-card"]')
+    .should('have.length', 1)
+  })
+
 });
