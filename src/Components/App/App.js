@@ -76,10 +76,19 @@ class App extends Component {
   //this will need to be passed down as props to the outfitItemsContainer where the onClick of the Save Outfit button will run this method and clear our state (outfitCart)
   addOutfit = () => {
     return addNewOutfit(this.state.outfitItems)
-      .then(newOutfitId => {
-        console.log(`newOutfitId from backend:`, newOutfitId.result.id)
-        // console.log(`data.result.id:`, data.result.id)
-        //this will return the id of the new outfit
+      .then(addedOutfit => {
+        console.log(`ENTIRE addedOutfit from backend promise:`, addedOutfit);
+        console.log(`addedOutfit.result.id from backend promise:`, addedOutfit.result.id)        
+        //MAKE SURE that the typeof addedOutfit.result.id is number
+        //MAKE SURE that the typeof items in this.state.outfits is a number
+        const updatedOutfits = [...this.state.outfits, addedOutfit.result.id];
+        this.setState({ outfits: updatedOutfits, 
+          outfitItems: {
+            top_id: null, 
+            bottom_id: null,
+            accessory_id: null
+          }
+        });
         //will need to setState for the outfits array by adding this to our current state [..this.state.outfits, newOutfit] and the outfitItems back to null
       })
       .catch(error => {
