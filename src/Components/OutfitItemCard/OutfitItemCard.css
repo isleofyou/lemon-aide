@@ -1,0 +1,9 @@
+.outfit-item-image {
+  width: 5vh;
+  border-radius: 10px;
+}
+
+.item-color, .item-name {
+  font-size: 10px;
+}
+

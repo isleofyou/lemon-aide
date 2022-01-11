@@ -25,7 +25,6 @@ const CartDropdown = ({ toggleCart, outfitItems, deleteItemFromOutfit, addOutfit
         className='create-outfit-button'
         onClick={() => {
           addOutfit();
-          toggleCart();
         }}
       >
       Save Outfit
