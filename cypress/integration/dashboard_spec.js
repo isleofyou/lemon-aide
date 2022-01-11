@@ -24,7 +24,7 @@ describe('Lemon-aide dashboard test', () => {
       .should('include', '/');
   });
 
-  it.only(`As a user, when I click on the aside's "All Items" link, I should be directed to the homepage`, () => {
+  it(`As a user, when I click on the aside's "All Items" link, I should be directed to the homepage`, () => {
     cy.visit('http://localhost:3000/favorites')
 
     cy.get('div[class="sidebar"]')
@@ -165,3 +165,18 @@ describe('Lemon-aide dashboard loading test', () => {
       .should('have.length', 1);
   });
 });
+
+describe.only('Lemon-aide dashboard no favorites', () => {
+  beforeEach(() => {
+    cy.intercept('GET', '/api/v1/all-products', {
+      fixture: 'productsNoFav.json',
+    });
+
+    cy.visit('http://localhost:3000/favorites')
+  })
+
+  it(`As a user, when I visit the favorites page and I haven't favorited any products I should see a div that tells me to "Add favorites to see them here.`, () => {
+    cy.get('div[class="no-favorites"]')
+      .should('have.length', 1);
+  });
+})
