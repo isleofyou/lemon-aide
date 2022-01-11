@@ -20,6 +20,11 @@
   font-size: 1.5rem;
 }
 
+.cat {
+  margin: 2px;
+  height: 1.5rem;
+}
+
 .footer-links {
   width: 100%;
   display: flex;
