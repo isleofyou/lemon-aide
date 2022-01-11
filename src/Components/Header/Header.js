@@ -5,7 +5,7 @@ import Aside from '../Aside/Aside';
 import CartDropdown from '../CartDropdown/CartDropdown';
 import OutfitCartButton from '../OutfitCartButton/OutfitCartButton';
 
-const Header = () => {
+const Header = ({ outfitItems, deleteItemFromOutfit, addOutfit }) => {
   const [hidden, setHidden] = useState(true); 
 
   const toggleCart = () => {
@@ -23,6 +23,7 @@ const Header = () => {
       <h1>Lemon Aide</h1>
       <OutfitCartButton 
         toggleCart={toggleCart}
+        outfitItems={outfitItems}
       />
       { hidden ? null 
         : 
