@@ -65,7 +65,7 @@ class App extends Component {
     }
   }
   
-  //this will need to be passed down as props to the outfitItemsContainer & outfitItemCard where the onClick of X on the outfitItemCard will invoke this method
+  //this will need to be passed down as props to the cartDropdown & outfitItemCard where the onClick of X on the outfitItemCard will invoke this method
   deleteItemFromOutfit = (category) => {
     category = category + '_id';
     const updatedOutfitItems = {...this.state.outfitItems};
@@ -73,15 +73,10 @@ class App extends Component {
     this.setState({ outfitItems: updatedOutfitItems });
   }
 
-  //this will need to be passed down as props to the outfitItemsContainer where the onClick of the Save Outfit button will run this method and clear our state (outfitCart)
   addOutfit = () => {
     return addNewOutfit(this.state.outfitItems)
-      .then(addedOutfit => {
-        // console.log(`ENTIRE addedOutfit from backend promise:`, addedOutfit);
-        // console.log(`addedOutfit.result.id from backend promise:`, addedOutfit.result.id)        
-        //MAKE SURE that the typeof addedOutfit.result.id is number
-        //MAKE SURE that the typeof items in this.state.outfits is a number
-        const updatedOutfits = [...this.state.outfits, addedOutfit.result.id];
+      .then(data => {
+        const updatedOutfits = [...this.state.outfits, data.newOutfit[0].id];
         this.setState({ outfits: updatedOutfits, 
           outfitItems: {
             top_id: null, 
@@ -89,7 +84,6 @@ class App extends Component {
             accessory_id: null
           }
         });
-        //will need to setState for the outfits array by adding this to our current state [..this.state.outfits, newOutfit] and the outfitItems back to null
       })
       .catch(error => {
         this.setState({ error: error.message });
@@ -122,6 +116,7 @@ class App extends Component {
           outfitItems={this.state.outfitItems}
           deleteItemFromOutfit={this.deleteItemFromOutfit}
           addOutfit={this.addOutfit}
+          products={this.state.products}
         />  
         <Routes>
           <Route path ='/' element={ 
