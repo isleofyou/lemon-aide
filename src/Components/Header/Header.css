@@ -1,7 +1,9 @@
 h1 {
   font-size: 1.75em;
   font: bold;
+  cursor: pointer;
 }
+
 
 .header-container {
   display: flex;
