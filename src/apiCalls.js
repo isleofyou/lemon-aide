@@ -50,9 +50,26 @@ const addNewOutfit = (outfitItems) => {
     });
 }
 
+const deleteOutfit = (id) => {
+  return fetch(`http://localhost:3001/api/v1/outfits/${id.id}`, {
+    method: 'DELETE',
+    body: JSON.stringify(id),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
+      return response.json();
+    });
+}
+
 module.exports = {
   getAllProducts, 
   updateFavorite,
   getAllOutfits,
-  addNewOutfit
+  addNewOutfit,
+  deleteOutfit
 }
