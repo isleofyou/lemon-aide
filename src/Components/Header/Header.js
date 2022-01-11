@@ -29,6 +29,9 @@ const Header = ({ outfitItems, deleteItemFromOutfit, addOutfit }) => {
         : 
         <CartDropdown 
           toggleCart={toggleCart}
+          outfitItems={outfitItems}
+          deleteItemFromOutfit={deleteItemFromOutfit}
+          addOutfit={addOutfit}
         />
       }
     </header>
