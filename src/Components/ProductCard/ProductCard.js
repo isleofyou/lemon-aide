@@ -2,7 +2,7 @@ import "../ProductCard/ProductCard.css";
 import heart from '../../assets/transparent-heart.jpeg';
 import faveHeart from '../../assets/red-heart.png';
 
-const ProductCard = ({ id, name, color, img_url, category, favorite, addFavorite }) => {
+const ProductCard = ({ id, name, color, img_url, category, favorite, addFavorite, addItemToOutfit }) => {
   return (
     <article className="product-card">
       <div className="product-card-container">
@@ -25,7 +25,10 @@ const ProductCard = ({ id, name, color, img_url, category, favorite, addFavorite
         <h2 className="product-color">
           {color}
         </h2>
-        <button className={category}>
+        <button 
+          className={category}
+          onClick={() => addItemToOutfit(category, id)}
+        >
           Select {category}
         </button>
       </div>

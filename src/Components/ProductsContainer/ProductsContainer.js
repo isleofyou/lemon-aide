@@ -4,7 +4,7 @@ import Loading from '../Loading/Loading';
 import brokenHeart from '../../assets/broken-heart.png';
 import { useLocation } from 'react-router-dom';
 
-const ProductsContainer = ({ products, addFavorite }) => {
+const ProductsContainer = ({ products, addFavorite, addItemToOutfit, addOutfit }) => {
   let location = useLocation();
 
   const productCards = products.map(product => {
@@ -18,6 +18,7 @@ const ProductsContainer = ({ products, addFavorite }) => {
         category={product.category}
         favorite={product.favorite}
         addFavorite={addFavorite}
+        addItemToOutfit={addItemToOutfit}
       />
     );
   });
@@ -47,3 +48,10 @@ const ProductsContainer = ({ products, addFavorite }) => {
 }
 
 export default ProductsContainer;
+
+{/* <button
+className="create-outfit-button"
+onClick={() => addOutfit()}
+>
+save outfit
+</button> */}
