@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { getAllProducts, updateFavorite } from '../../apiCalls';
+import { getAllProducts, updateFavorite, getAllOutfits, addNewOutfit } from '../../apiCalls';
 import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
@@ -11,17 +11,26 @@ class App extends Component {
     super();
     this.state = {
       products: [],
+      outfits: [],
+      outfitItems: {
+        top_id: null, 
+        bottom_id: null,
+        accessory_id: null
+      },
       error: null
     };
   }
 
   componentDidMount = () => {
     const allProducts = getAllProducts();
+    const allOutfits = getAllOutfits();
 
-    Promise.all([allProducts])
+    Promise.all([allProducts, allOutfits])
       .then(data => {
         const fetchedProducts = data[0];
-        this.setState({ products: fetchedProducts });
+        const fetchedOutfits = data[1];
+
+        this.setState({ products: fetchedProducts, outfits: fetchedOutfits });
       })
       .catch(error => {
         this.setState({ error: error.message });
