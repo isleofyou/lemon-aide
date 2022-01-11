@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className='header-container'>
       <Aside />
-        <img className='logo-img' alt='Logo' src={logo} />
+        <img className='logo-img' alt='Logo' src={logo} onClick={() => {navigate('/')}}/>
         <h1 onClick={() => {navigate('/')}}>Lemon Aide</h1>
     </header>
   )
