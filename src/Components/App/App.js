@@ -118,7 +118,11 @@ class App extends Component {
         <Error error={this.state.error} />
       :
       <>
-        <Header />  
+        <Header 
+          outfitItems={this.state.outfitItems}
+          deleteItemFromOutfit={this.deleteItemFromOutfit}
+          addOutfit={this.addOutfit}
+        />  
         <Routes>
           <Route path ='/' element={ 
             <main className='main-page'>
