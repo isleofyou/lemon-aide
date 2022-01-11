@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { getAllProducts, updateFavorite, getAllOutfits, addNewOutfit } from '../../apiCalls';
+import { getAllProducts, updateFavorite, getAllOutfits, addNewOutfit, deleteOutfit } from '../../apiCalls';
 import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
