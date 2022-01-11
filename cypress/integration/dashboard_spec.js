@@ -111,12 +111,41 @@ describe('Lemon-aide dashboard test', () => {
     .should('have.length', 1)
   });
 
-  it.only('As a user when I click my outfits it should take me to the my outfits route', () => {
+  it('As a user when I click my outfits it should take me to the my outfits route', () => {
     cy.get('div[class="sidebar"]')
       .click()
       .get('a[href="/my-outfits"]')
       .click()
       .url()
         .should('include', '/my-outfits')
+  });
+});
+
+describe('Lemon-aide dashboard error test', () => {
+  beforeEach(() => {
+    cy.intercept('GET', '/api/v1/all-products', {
+      statusCode: 404
+    });
+    cy.visit('http://localhost:3000');
+  })
+
+  it('As a user if there is a fetch error I should be shown an error message', () => {
+    cy.get('div[class="error-container"]')
+      .should('have.length', 1)
+  })
+})
+
+describe.only('Lemon-aide dashboard loading test', () => {
+  beforeEach(() => {
+    cy.intercept('GET', '/api/v1/all-products', {
+      fixture: 'products.json',
+      delay: 3000
+    });
+    cy.visit('http://localhost:3000');
+  });
+
+  it('As a user if data is not ready to be displayed I should be shown a loading image', () => {
+    cy.get('div[class="loading-flex"]')
+      .should('have.length', 1);
   });
 });
