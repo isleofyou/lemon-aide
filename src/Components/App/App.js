@@ -72,11 +72,21 @@ class App extends Component {
     updatedOutfitItems[category] = null;
     this.setState({ outfitItems: updatedOutfitItems });
   }
+
+  //this will need to be passed down as props to the outfitItemsContainer where the onClick of the Save Outfit button will run this method and clear our state (outfitCart)
   addOutfit = () => {
     return addNewOutfit(this.state.outfitItems)
-      .then(data => {
-        console.log(`data from backend endpoint:`, addNewOutfit)
+      .then(newOutfitId => {
+        console.log(`newOutfitId from backend:`, newOutfitId.result.id)
+        // console.log(`data.result.id:`, data.result.id)
+        //this will return the id of the new outfit
+        //will need to setState for the outfits array by adding this to our current state [..this.state.outfits, newOutfit] and the outfitItems back to null
       })
+      .catch(error => {
+        this.setState({ error: error.message });
+      });
+  }
+
   }
 
   render = () => {
