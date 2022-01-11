@@ -78,6 +78,7 @@ class App extends Component {
               <ProductsContainer 
                 products={this.state.products.filter(product => product.favorite)} 
                 addFavorite={this.addFavorite} 
+                addItemToOutfit={this.addItemToOutfit}
               />
             </main>
           }
