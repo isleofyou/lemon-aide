@@ -21,4 +21,5 @@
   bottom: -5px;
   right: 18px;
   text-align: center;
+  pointer-events: none;
 }
