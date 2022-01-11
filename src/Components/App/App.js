@@ -65,7 +65,6 @@ class App extends Component {
     }
   }
   
-  //this will need to be passed down as props to the cartDropdown & outfitItemCard where the onClick of X on the outfitItemCard will invoke this method
   deleteItemFromOutfit = (category) => {
     category = category + '_id';
     const updatedOutfitItems = {...this.state.outfitItems};
