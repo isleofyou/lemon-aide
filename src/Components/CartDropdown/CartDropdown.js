@@ -1,16 +1,14 @@
 import React from 'react';
 import './CartDropdown.css';
 
+const CartDropdown = ({ toggleCart }) => {
+  //this will display our outfitItemCards
+  return (
+    <div className='cart-dropdown'>
+      <button onClick={() => toggleCart()}>X</button>
+      <button className='checkout-button'>Create Outfit</button>
+    </div>
+  );
+}
 
-const CartDropdown = ({toggleCartHidden}) => {
-    return (
-    <>
-      <div className='cart-dropdown'>
-        <button onClick={() => toggleCartHidden()}>x</button>
-      <button className='checkout-button'>CREATE OUTFIT</button>
-  </div>
-    </>
-    )
-  }
-
-  export default CartDropdown;
+export default CartDropdown;
