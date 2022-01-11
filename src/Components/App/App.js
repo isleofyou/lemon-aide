@@ -64,7 +64,14 @@ class App extends Component {
       this.setState({ outfitItems: updatedOutfitItems });
     }
   }
-
+  
+  //this will need to be passed down as props to the outfitItemsContainer & outfitItemCard where the onClick of X on the outfitItemCard will invoke this method
+  deleteItemFromOutfit = (category) => {
+    category = category + '_id';
+    const updatedOutfitItems = {...this.state.outfitItems};
+    updatedOutfitItems[category] = null;
+    this.setState({ outfitItems: updatedOutfitItems });
+  }
   addOutfit = () => {
     return addNewOutfit(this.state.outfitItems)
       .then(data => {
