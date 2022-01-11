@@ -77,8 +77,8 @@ class App extends Component {
   addOutfit = () => {
     return addNewOutfit(this.state.outfitItems)
       .then(addedOutfit => {
-        console.log(`ENTIRE addedOutfit from backend promise:`, addedOutfit);
-        console.log(`addedOutfit.result.id from backend promise:`, addedOutfit.result.id)        
+        // console.log(`ENTIRE addedOutfit from backend promise:`, addedOutfit);
+        // console.log(`addedOutfit.result.id from backend promise:`, addedOutfit.result.id)        
         //MAKE SURE that the typeof addedOutfit.result.id is number
         //MAKE SURE that the typeof items in this.state.outfits is a number
         const updatedOutfits = [...this.state.outfits, addedOutfit.result.id];
@@ -100,10 +100,10 @@ class App extends Component {
   deleteOutfit = (id) => {
     return deleteOutfit(id)
       .then(deletedOutfit => {
-        console.log(`ENTIRE deletedOutfit from backend promise:`, deletedOutfit);   
-        console.log(`deletedOutfit.result.id from backend promise:`, deletedOutfit.result.id)        
+        // console.log(`ENTIRE deletedOutfit from backend promise:`, deletedOutfit);   
+        // console.log(`deletedOutfit.result.id from backend promise:`, deletedOutfit.result.id)        
         const updatedOutfits = [...this.state.outfits].filter(outfitId => outfitId !== deletedOutfit.result.id);
-        console.log(`updatedOutfits: ${updatedOutfits} should NOT have this id: ${deleteOutfit.result.id}`);
+        // console.log(`updatedOutfits: ${updatedOutfits} should NOT have this id: ${deleteOutfit.result.id}`);
 
         this.setState({ outfits: updatedOutfits });
 ;      })
@@ -130,7 +130,6 @@ class App extends Component {
                 products={this.state.products} 
                 addFavorite={this.addFavorite} 
                 addItemToOutfit={this.addItemToOutfit}
-                addOutfit={this.addOutfit}
               />
             </main>
           }
@@ -141,7 +140,6 @@ class App extends Component {
                 products={this.state.products.filter(product => product.favorite)} 
                 addFavorite={this.addFavorite} 
                 addItemToOutfit={this.addItemToOutfit}
-                addOutfit={this.addOutfit}
               />
             </main>
           }
