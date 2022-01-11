@@ -19,6 +19,22 @@ describe('Lemon-aide dashboard test', () => {
       .should('have.length', '1');
   });
 
+  it('As a user, when I visit the homepage the URL should be "/"', () => {
+    cy.url()
+      .should('include', '/');
+  });
+
+  it.only(`As a user, when I click on the aside's "All Items" link, I should be directed to the homepage`, () => {
+    cy.visit('http://localhost:3000/favorites')
+
+    cy.get('div[class="sidebar"]')
+      .click()
+      .get('a[href="/"]')
+      .click()
+      .url()
+        .should('include', '/')
+  });
+
   it('As a user when I visit the homepage I should see all the products', () => {
     cy.get('main[class="products-container"]')
       .should('have.length', 1)
@@ -135,7 +151,7 @@ describe('Lemon-aide dashboard error test', () => {
   })
 })
 
-describe.only('Lemon-aide dashboard loading test', () => {
+describe('Lemon-aide dashboard loading test', () => {
   beforeEach(() => {
     cy.intercept('GET', '/api/v1/all-products', {
       fixture: 'products.json',
