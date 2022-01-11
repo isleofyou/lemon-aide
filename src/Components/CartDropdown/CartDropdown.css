@@ -1,9 +1,9 @@
 .cart-dropdown {
   position: absolute;
-  width: 240px;
+  width: 280px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 4px;
   box-shadow: 3px 3px 8px 0px rgb(0 0 0 / 20%);
   border-radius: 10px;
   background-color: white;
@@ -26,4 +26,16 @@
 .exit-button-container {
   display: flex;
   justify-content: flex-end;
+  padding-bottom: 12px;
+}
+
+.exit-dropdown-button {
+  height: 30px;
+  width: 30px;
+}
+
+.create-outfit-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
 }

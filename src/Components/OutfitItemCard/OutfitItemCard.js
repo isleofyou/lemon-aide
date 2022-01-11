@@ -1,4 +1,5 @@
 import '../OutfitItemCard/OutfitItemCard.css';
+import * as AiIcons from 'react-icons/ai';
 
 const OutfitItemCard = ({ name, color, img_url, category, deleteItemFromOutfit }) => {
   return (
@@ -16,12 +17,13 @@ const OutfitItemCard = ({ name, color, img_url, category, deleteItemFromOutfit }
           {color}
         </h2>
       </div>
+
       <button
-        className='remove-item-card'
-        onClick={() => deleteItemFromOutfit(category)}
-      >
-      X
-      </button>
+className='remove-item-card'
+onClick={() => deleteItemFromOutfit(category)}
+>
+X
+</button>
     </article>
 
   );
@@ -29,3 +31,6 @@ const OutfitItemCard = ({ name, color, img_url, category, deleteItemFromOutfit }
 }
 
 export default OutfitItemCard;
+
+
+

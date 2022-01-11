@@ -1,6 +1,7 @@
 import React from 'react';
 import './CartDropdown.css';
 import OutfitItemCard from '../OutfitItemCard/OutfitItemCard';
+import * as AiIcons from 'react-icons/ai';
 
 const CartDropdown = ({ toggleCart, outfitItems, deleteItemFromOutfit, addOutfit, products }) => {
   const selectedOutfitItemIds = Object.values(outfitItems).filter(item => item !== null);
@@ -20,17 +21,20 @@ const CartDropdown = ({ toggleCart, outfitItems, deleteItemFromOutfit, addOutfit
   return (
     <div className='cart-dropdown'>
       <div className='exit-button-container'>
-        <button className='dropdown-close-button' onClick={() => toggleCart()}>X</button>
+
+        <AiIcons.AiOutlineCloseCircle className='exit-dropdown-button' onClick={() => toggleCart()}/>
       </div>
       {outfitItemCards}
-      <button 
-        className='create-outfit-button'
-        onClick={() => {
-          addOutfit();
-        }}
-      >
-      Save Outfit
-      </button>
+      <div className='create-outfit-button-container'>
+        <button 
+          className='create-outfit-button'
+          onClick={() => {
+            addOutfit();
+          }}
+        >
+        Save Outfit
+        </button>
+      </div>
     </div>
   );
 }
