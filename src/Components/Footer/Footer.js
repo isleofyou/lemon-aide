@@ -2,6 +2,7 @@ import React from 'react';
 import './Footer.css';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/Lululemon_Athletica_logo.png';
+import * as AiIcons from 'react-icons/ai';
 
 const Footer = () => {
   return (
@@ -9,22 +10,22 @@ const Footer = () => {
       <div className='foot-links'>
         <div className='footer-link-wrapper'>
           <div class='footer-link-items'>
-            <h2>About Us</h2>
-            <Link to='/'>Ivonne Hernandez</Link>
-            <Link to='/'>David Tran</Link>
-            <Link to='/'>Markus Rossio</Link>
-          </div>
-          <div class='footer-link-items'>
-            <h2>LinkedIn</h2>
-            <a href={'https://www.linkedin.com/in/ivonne-hernandez-107b0324/'} target={'blank'}>Ivonne</a>
-            <a href={'https://www.linkedin.com/in/david-tran7/'} target={'blank'}>David</a>
-            <a href={'https://www.linkedin.com/in/markus-rossio/'} target={'blank'}>Markus</a>
-          </div>
-          <div class='footer-link-items'>
-            <h2>Github</h2>
-            <a href={'https://github.com/ivonne-hernandez'} target={'blank'}>Ivonne</a>
-            <a href={'https://github.com/isleofyou'} target={'blank'}>David</a>
-            <a href={'https://github.com/Markus-Xavier'} target={'blank'}>Markus</a>
+            <h2>Contact Us</h2>
+              <div className='contact-info'>
+                <Link to='/'>Ivonne Hernandez</Link>
+                <a className='contact-icons' href={'https://www.linkedin.com/in/ivonne-hernandez-107b0324/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
+                <a className='contact-icons' href={'https://github.com/ivonne-hernandez'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
+              </div>
+              <div className='contact-info'>
+                <Link to='/'>David Tran</Link>
+                <a className='contact-icons' href={'https://www.linkedin.com/in/david-tran7/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
+                <a className='contact-icons' href={'https://github.com/isleofyou'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
+              </div>
+              <div className='contact-info'>
+                <Link to='/'>Markus Rossio</Link>
+                <a className='contact-icons' href={'https://www.linkedin.com/in/markus-rossio/'} target={'blank'}><AiIcons.AiOutlineLinkedin /></a>
+                <a className='contact-icons' href={'https://github.com/Markus-Xavier'} target={'blank'}><AiIcons.AiOutlineGithub /></a>
+              </div>
           </div>
         </div>
       </div>
