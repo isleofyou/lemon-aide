@@ -4,8 +4,8 @@ import './CartIcon.css';
 
 export default function CartIcon({toggleCartHidden}) {
   return (
-    <div className='cart-icon' onClick={toggleCartHidden}>
-    <img src={HangerIcon} className='shopping-icon'/>
+    <div className='cart-icon'>
+    <img src={HangerIcon} className='shopping-icon' onClick={toggleCartHidden}/>
     <span className='item-count'></span>
 </div>
   )
