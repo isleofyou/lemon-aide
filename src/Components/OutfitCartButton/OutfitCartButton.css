@@ -1,0 +1,22 @@
+.cart-button-container {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: .98;
+}
+
+.cart-button {
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.cart-item-count {
+  /* position: absolute; */
+  font-size: 22px;
+  font-weight: bold;
+  bottom: 12px;
+}
