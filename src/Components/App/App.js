@@ -90,12 +90,13 @@ class App extends Component {
   //this will need to be passed down as props to the container that holds the outfits (create new outfitsContainer component that will display each outfit via outfitCard)
   deleteOutfit = (id) => {
     return deleteOutfit(id)
-      .then(deletedOutfitId => {
-        //this will return the id of the deleted outfit
-        console.log(`deletedOutfitId from backend:`, deletedOutfitId.result.id)        
-        // const updatedOutfitItems = [...this.state.outfits].filter(outfitId => outfitId !== deletedOutfitId);
-        //will need to setState for the outfits array
-        //this.setState({ outfits: updatedOutfitItems })?
+      .then(deletedOutfit => {
+        console.log(`ENTIRE deletedOutfit from backend promise:`, deletedOutfit);   
+        console.log(`deletedOutfit.result.id from backend promise:`, deletedOutfit.result.id)        
+        const updatedOutfits = [...this.state.outfits].filter(outfitId => outfitId !== deletedOutfit.result.id);
+        console.log(`updatedOutfits: ${updatedOutfits} should NOT have this id: ${deleteOutfit.result.id}`);
+
+        this.setState({ outfits: updatedOutfits });
 ;      })
       .catch(error => {
         this.setState({ error: error.message });
