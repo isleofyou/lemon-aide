@@ -22,3 +22,8 @@
 .create-outfit-button {
   margin-top: auto;
 }
+
+.exit-button-container {
+  display: flex;
+  justify-content: flex-end;
+}

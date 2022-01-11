@@ -19,7 +19,9 @@ const CartDropdown = ({ toggleCart, outfitItems, deleteItemFromOutfit, addOutfit
 
   return (
     <div className='cart-dropdown'>
-      <button onClick={() => toggleCart()}>X</button>
+      <div className='exit-button-container'>
+        <button className='dropdown-close-button' onClick={() => toggleCart()}>X</button>
+      </div>
       {outfitItemCards}
       <button 
         className='create-outfit-button'

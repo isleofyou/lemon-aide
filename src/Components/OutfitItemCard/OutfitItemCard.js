@@ -2,18 +2,20 @@ import '../OutfitItemCard/OutfitItemCard.css';
 
 const OutfitItemCard = ({ name, color, img_url, category, deleteItemFromOutfit }) => {
   return (
-    <article>
+    <article className='outfit-item-container'>
       <img 
         className='outfit-item-image'
         src={img_url}
         alt={color + ` ` + name }
       />
-      <h2 className="outfit-item-name">
-          {name}
+      <div className='outfit-item-info-container'>
+        <h2 className="outfit-item-name">
+            {name}
+          </h2>
+        <h2 className="outfit-item-color">
+          {color}
         </h2>
-      <h2 className="outfit-item-color">
-        {color}
-      </h2>
+      </div>
       <button
         className='remove-item-card'
         onClick={() => deleteItemFromOutfit(category)}
