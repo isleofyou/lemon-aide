@@ -5,7 +5,7 @@ import Aside from '../Aside/Aside';
 import CartDropdown from '../CartDropdown/CartDropdown';
 import OutfitCartButton from '../OutfitCartButton/OutfitCartButton';
 
-const Header = ({ outfitItems, deleteItemFromOutfit, addOutfit }) => {
+const Header = ({ outfitItems, deleteItemFromOutfit, addOutfit, products }) => {
   const [hidden, setHidden] = useState(true); 
 
   const toggleCart = () => {
@@ -32,6 +32,7 @@ const Header = ({ outfitItems, deleteItemFromOutfit, addOutfit }) => {
           outfitItems={outfitItems}
           deleteItemFromOutfit={deleteItemFromOutfit}
           addOutfit={addOutfit}
+          products={products}
         />
       }
     </header>
