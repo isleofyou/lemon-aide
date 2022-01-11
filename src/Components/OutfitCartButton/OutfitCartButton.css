@@ -9,14 +9,16 @@
 }
 
 .cart-button {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
 }
 
 .cart-item-count {
-  /* position: absolute; */
+  position: absolute;
   font-size: 22px;
   font-weight: bold;
-  bottom: 12px;
+  bottom: -5px;
+  right: 18px;
+  text-align: center;
 }

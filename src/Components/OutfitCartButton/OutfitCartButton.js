@@ -2,7 +2,9 @@ import React from 'react';
 import HangerIcon  from '../../assets/hanger.png';
 import './OutfitCartButton.css';
 
-const OutfitCartButton = ({ toggleCart }) => {
+const OutfitCartButton = ({ toggleCart, outfitItems }) => {
+  const numberOfItemsInCart = Object.values(outfitItems).filter(item => item !== null).length;
+
   return (
     <div className='cart-button-container'>
       <img 
@@ -10,7 +12,9 @@ const OutfitCartButton = ({ toggleCart }) => {
         src={HangerIcon} 
         onClick={toggleCart}
       />
-      <div className='cart-item-count'>(3)</div>
+      <div className='cart-item-count'>
+        {numberOfItemsInCart} 
+      </div>
     </div>
   );
 }
