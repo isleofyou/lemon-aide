@@ -21,17 +21,20 @@
 
 .create-outfit-button {
   margin-top: auto;
+  cursor: pointer;
 }
 
 .exit-button-container {
   display: flex;
   justify-content: flex-end;
   padding-bottom: 12px;
+  cursor: pointer;
 }
 
 .exit-dropdown-button {
   height: 30px;
   width: 30px;
+  cursor: pointer;
 }
 
 .create-outfit-button-container {

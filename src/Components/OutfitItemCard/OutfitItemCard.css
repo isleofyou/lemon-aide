@@ -30,5 +30,6 @@
 .remove-item-card {
   align-self: flex-end;
   background-color: #EF233C;
+  cursor: pointer;
 }
 
