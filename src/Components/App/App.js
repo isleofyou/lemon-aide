@@ -5,6 +5,8 @@ import Header from '../Header/Header';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
 import Error from '../Error/Error';
 import './App.css';
+import Footer from '../Footer/Footer';
+
 
 class App extends Component {
   constructor() {
@@ -74,6 +76,7 @@ class App extends Component {
           }
           />
         </Routes>
+        <Footer />
       </>
     );
   }
