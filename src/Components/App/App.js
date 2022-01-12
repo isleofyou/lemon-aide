@@ -114,6 +114,7 @@ class App extends Component {
           deleteItemFromOutfit={this.deleteItemFromOutfit}
           addOutfit={this.addOutfit}
           products={this.state.products}
+          outfits={this.state.outfits}
         />  
         <Routes>
           <Route path ='/' element={ 

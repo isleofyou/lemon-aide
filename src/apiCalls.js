@@ -35,6 +35,7 @@ const getAllOutfits = () => {
 }
 
 const addNewOutfit = (outfitItems) => {
+  let unparsedResponse;
   return fetch('http://localhost:3001/api/v1/outfits', {
     method: 'POST',
     body: JSON.stringify(outfitItems),
@@ -43,10 +44,14 @@ const addNewOutfit = (outfitItems) => {
     }
   })
     .then(response => {
-      if (!response.ok) {
-        throw new Error(`${response.status} ${response.statusText}`);
-      }
+      unparsedResponse = response;
       return response.json();
+    })
+    .then(parsedResponse => {
+      if (!unparsedResponse.ok) {
+        throw new Error(`${unparsedResponse.status} ${parsedResponse.error}`);
+      }
+      return parsedResponse;
     });
 }
 
