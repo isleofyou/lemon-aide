@@ -3,6 +3,14 @@ import "../OutfitCard/OutfitCard.css";
 const OutfitCard = ({ id, topProduct, bottomProduct, accessoryProduct, deleteOutfit }) => {
   return (
     <article className='outfit-card-container'>
+      <div className='delete-button-container'>
+        <button
+          className='remove-item-card'
+          onClick={() => deleteOutfit(id)}
+          >
+          X
+        </button>
+      </div>
       <div className='outfit-item-info-container'>
         <img 
           className='outfit-item-image'
@@ -31,15 +39,6 @@ const OutfitCard = ({ id, topProduct, bottomProduct, accessoryProduct, deleteOut
           <p className="outfit-item-name">{accessoryProduct.color} {accessoryProduct.name}</p>
         </div>
       )}
-
-
-
-      <button
-        className='remove-item-card'
-        onClick={() => deleteOutfit(id)}
-      >
-        X
-      </button>
     </article>
 
   );

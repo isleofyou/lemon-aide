@@ -17,7 +17,6 @@ const OutfitItemCard = ({ name, color, img_url, category, deleteItemFromOutfit }
           {color}
         </h2>
       </div>
-
       <button
 className='remove-item-card'
 onClick={() => deleteItemFromOutfit(category)}
