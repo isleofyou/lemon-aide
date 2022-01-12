@@ -6,7 +6,7 @@ import OutfitCartButton from '../OutfitCartButton/OutfitCartButton';
 import logo from '../../assets/red-omega.png';
 import './Header.css';
 
-const Header = ({ outfitItems, deleteItemFromOutfit, addOutfit, products }) => {
+const Header = ({ outfitItems, deleteItemFromOutfit, addOutfit, products, outfits }) => {
   const [hidden, setHidden] = useState(true); 
   let navigate = useNavigate();
 
@@ -36,6 +36,7 @@ const Header = ({ outfitItems, deleteItemFromOutfit, addOutfit, products }) => {
           deleteItemFromOutfit={deleteItemFromOutfit}
           addOutfit={addOutfit}
           products={products}
+          outfits={outfits}
         />
       }
     </header>
