@@ -46,6 +46,8 @@ PUT A SCREENSHOT HERE
   - HTML
   - CSS
   - JavaScript
+  - Cypress
+  - Git Version Control / GitHub
 
 ## Contributors
   - [Ivonne Hernandez](https://github.com/ivonne-hernandez)
