@@ -15,6 +15,7 @@ h1 {
 .logo-img { 
   height: 40px;
   width: 40px;
-  transform: rotate(180deg);
   margin-right: 10px;
+  z-index: -1;
+  border-radius: 50%;
 }
