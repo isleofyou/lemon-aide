@@ -11,7 +11,7 @@ describe('Lemon-aide dashboard test', () => {
     cy.visit('http://localhost:3000');
   })
 
-  it('As a user when I visit the homepage I should see a header', () => {
+  it('As a user, when I visit the homepage I should see a header', () => {
     cy.get('header[class="header-container"]')
       .should('have.length', 1)
       .contains('Lemon Aide')
@@ -19,7 +19,23 @@ describe('Lemon-aide dashboard test', () => {
       .should('have.length', '1');
   });
 
-  it('As a user when I visit the homepage I should see all the products', () => {
+  it('As a user, when I visit the homepage the URL should be "/"', () => {
+    cy.url()
+      .should('include', '/');
+  });
+
+  it(`As a user, when I click on the aside's "All Items" link, I should be directed to the homepage`, () => {
+    cy.visit('http://localhost:3000/favorites')
+
+    cy.get('div[class="sidebar"]')
+      .click()
+      .get('a[href="/"]')
+      .click()
+      .url()
+      .should('include', '/');
+  });
+
+  it('As a user, when I visit the homepage I should see all the products', () => {
     cy.get('main[class="products-container"]')
       .should('have.length', 1)
       .get('article[class="product-card"]')
@@ -38,22 +54,22 @@ describe('Lemon-aide dashboard test', () => {
       .should('have.length', 3);
   });
 
-  it('As a user when I visit the homepage I should see collapsible nav bar', () => {
+  it('As a user, when I visit the homepage I should see collapsable nav bar', () => {
     cy.get('div[class="sidebar"]')
       .should('have.length', 1);
   });
 
-  it('As a user when I visit the home page and click on the collapsible nav bar I should see a nav menu and be able to close it', () => {
+  it('As a user, when I visit the home page and click on the collapsable nav bar I should see a nav menu and be able to close it', () => {
     cy.get('div[class="sidebar"]')
-    .click()
-    .get('nav[class="aside active"]')
-    .should('have.length', 1)
-    .get('li[class="aside-items"]')
-    .should('have.length', 3)
-    .get('li[class="sidebar-toggle"]')
-    .click()
-    .get('nav[class="aside"]')
-    .should('have.length', 1);
+      .click()
+      .get('nav[class="aside active"]')
+      .should('have.length', 1)
+      .get('li[class="aside-items"]')
+      .should('have.length', 3)
+      .get('li[class="sidebar-toggle"]')
+      .click()
+      .get('nav[class="aside"]')
+      .should('have.length', 1);
   });
 
   it('As a user, when I click on an outlined heart of a product it should show a red heart to indicate that the product has now been favorited', () => {
@@ -99,4 +115,69 @@ describe('Lemon-aide dashboard test', () => {
       .should('have.length', 3);
   });
 
+  it('As a user, when I click on "Favorites" from the collapsable nav bar it should only show me my favorited products', () => {
+    cy.get('div[class="sidebar"]')
+      .click()
+      .get('a[href="/favorites"]')
+      .click()
+      .url()
+      .should('include', '/favorites')
+      .get('main[class="products-container"]')
+      .get('article[class="product-card"]')
+      .should('have.length', 1);
+  });
+
+  it('As a user, when I click on "My Outfits" from the collapsable nav bar it should navigate me to the my outfits route', () => {
+    cy.get('div[class="sidebar"]')
+      .click()
+      .get('a[href="/my-outfits"]')
+      .click()
+      .url()
+      .should('include', '/my-outfits');
+  });
+});
+
+describe('Lemon aide dashboard error test', () => {
+  beforeEach(() => {
+    cy.intercept('GET', '/api/v1/all-products', {
+      statusCode: 404
+    });
+    cy.visit('http://localhost:3000');
+  });
+
+  it('As a user, I should see an error message when something goes wrong (e.g. server error)', () => {
+    cy.get('div[class="error-container"]')
+      .should('have.length', 1);
+  });
+});
+
+describe('Lemon aide dashboard loading test', () => {
+  beforeEach(() => {
+    cy.intercept('GET', '/api/v1/all-products', {
+      fixture: 'products.json',
+      delay: 3000
+    });
+
+    cy.visit('http://localhost:3000');
+  });
+
+  it('As a user, when I visit the homepage and the products are still being rendered I should see a Loading component.', () => {
+    cy.get('div[class="loading-flex"]')
+      .should('have.length', 1);
+  });
+});
+
+describe('Lemon aide dashboard no favorites test', () => {
+  beforeEach(() => {
+    cy.intercept('GET', '/api/v1/all-products', {
+      fixture: 'productsNoFav.json',
+    });
+
+    cy.visit('http://localhost:3000/favorites')
+  });
+
+  it(`As a user, when I visit the favorites page and I haven't favorited any products I should see a div that tells me to "Add favorites to see them here."`, () => {
+    cy.get('div[class="no-favorites"]')
+      .should('have.length', 1);
+  });
 });
