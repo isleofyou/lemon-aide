@@ -76,7 +76,7 @@ class App extends Component {
   addOutfit = () => {
     return addNewOutfit(this.state.outfitItems)
       .then(data => {
-        const updatedOutfits = [...this.state.outfits, data.newOutfit[0].id];
+        const updatedOutfits = [...this.state.outfits, data.newOutfit[0]];
         this.setState({ outfits: updatedOutfits, 
           outfitItems: {
             top_id: null, 
@@ -92,14 +92,11 @@ class App extends Component {
 
   deleteOutfit = (id) => {
     return deleteOutfit(id)
-      .then(deletedOutfit => {
-        // console.log(`ENTIRE deletedOutfit from backend promise:`, deletedOutfit);   
-        // console.log(`deletedOutfit.result.id from backend promise:`, deletedOutfit.result.id)        
-        const updatedOutfits = [...this.state.outfits].filter(outfitId => outfitId !== deletedOutfit.result.id);
-        // console.log(`updatedOutfits: ${updatedOutfits} should NOT have this id: ${deleteOutfit.result.id}`);
-
+      .then(deletedOutfit => {     
+        let updatedOutfits = [...this.state.outfits];
+        updatedOutfits = updatedOutfits.filter(outfit => outfit.id !== deletedOutfit.id);
         this.setState({ outfits: updatedOutfits });
-;      })
+      })
       .catch(error => {
         this.setState({ error: error.message });
       });
