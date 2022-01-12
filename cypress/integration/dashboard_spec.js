@@ -112,7 +112,7 @@ describe('Lemon-aide dashboard test', () => {
       .get('img[class="favorite-button"]')
       .click()
       .get('img[class="unfavorite-button"]')
-      .should('have.length', 3);
+      .should('have.length', 2);
   });
 
   it('As a user, when I click on "Favorites" from the collapsable nav bar it should only show me my favorited products', () => {
