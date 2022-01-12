@@ -161,7 +161,7 @@ describe('Lemon aide dashboard loading test', () => {
     cy.visit('http://localhost:3000');
   });
 
-  it('As a user, if data is not ready to be displayed I should be shown a loading image', () => {
+  it('As a user, when I visit the homepage and the products are still being rendered I should see a Loading component.', () => {
     cy.get('div[class="loading-flex"]')
       .should('have.length', 1);
   });
