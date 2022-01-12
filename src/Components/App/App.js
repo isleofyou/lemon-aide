@@ -42,9 +42,9 @@ class App extends Component {
     return updateFavorite(id)
       .then(updatedProduct => {
         const updatedProducts = this.state.products.map(product => {
-          if (product.id === updatedProduct.result.id) {
+          if (product.id === updatedProduct.id) {
             const currentProductInState = product;
-            currentProductInState.favorite = updatedProduct.result.favorite;
+            currentProductInState.favorite = updatedProduct.favorite;
             return currentProductInState;
           }
           return product;
