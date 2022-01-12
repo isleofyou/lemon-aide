@@ -14,6 +14,10 @@
   cursor: pointer;
 }
 
+.cart-button:hover {
+  transform: scale(1.1);
+}
+
 .cart-item-count {
   position: absolute;
   font-size: 22px;
