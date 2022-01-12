@@ -54,22 +54,22 @@ describe('Lemon-aide dashboard test', () => {
       .should('have.length', 3);
   });
 
-  it('As a user, when I visit the homepage I should see collapsible nav bar', () => {
+  it('As a user, when I visit the homepage I should see collapsable nav bar', () => {
     cy.get('div[class="sidebar"]')
       .should('have.length', 1);
   });
 
-  it('As a user, when I visit the home page and click on the collapsible nav bar I should see a nav menu and be able to close it', () => {
+  it('As a user, when I visit the home page and click on the collapsable nav bar I should see a nav menu and be able to close it', () => {
     cy.get('div[class="sidebar"]')
-    .click()
-    .get('nav[class="aside active"]')
-    .should('have.length', 1)
-    .get('li[class="aside-items"]')
-    .should('have.length', 3)
-    .get('li[class="sidebar-toggle"]')
-    .click()
-    .get('nav[class="aside"]')
-    .should('have.length', 1);
+      .click()
+      .get('nav[class="aside active"]')
+      .should('have.length', 1)
+      .get('li[class="aside-items"]')
+      .should('have.length', 3)
+      .get('li[class="sidebar-toggle"]')
+      .click()
+      .get('nav[class="aside"]')
+      .should('have.length', 1);
   });
 
   it('As a user, when I click on an outlined heart of a product it should show a red heart to indicate that the product has now been favorited', () => {
@@ -117,14 +117,14 @@ describe('Lemon-aide dashboard test', () => {
 
   it('As a user, when I click on "Favorites" from the collapsable nav bar it should only show me my favorited products', () => {
     cy.get('div[class="sidebar"]')
-    .click()
-    .get('a[href="/favorites"]')
-    .click()
-    .url()
-    .should('include', '/favorites')
-    .get('main[class="products-container"]')
-    .get('article[class="product-card"]')
-    .should('have.length', 1);
+      .click()
+      .get('a[href="/favorites"]')
+      .click()
+      .url()
+      .should('include', '/favorites')
+      .get('main[class="products-container"]')
+      .get('article[class="product-card"]')
+      .should('have.length', 1);
   });
 
   it('As a user, when I click on "My Outfits" from the collapsable nav bar it should navigate me to the my outfits route', () => {
@@ -157,6 +157,7 @@ describe('Lemon aide dashboard loading test', () => {
       fixture: 'products.json',
       delay: 3000
     });
+    
     cy.visit('http://localhost:3000');
   });
 
