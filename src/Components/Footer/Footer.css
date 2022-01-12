@@ -15,8 +15,7 @@
   justify-content: center;
 }
 
-.contact-icons {
-  margin: 2px;
+.contact-icons, linked-in-icon {
   font-size: 1.5rem;
 }
 
@@ -48,10 +47,6 @@
   width: 100%;
 }
 
-.footer-link-items h2 {
-  margin-bottom: 16px;
-}
-
 .footer-link-items > h2 {
   color: #EDF2F4;
 }
@@ -59,7 +54,7 @@
 .footer-link-items a {
   color: #EDF2F4;
   text-decoration: none;
-  margin-bottom: 0.5rem;
+
 }
 
 .footer-link-items a:hover {
@@ -97,4 +92,16 @@
     flex-direction: column;
   }
 }
+
+h4 {
+  color: #EDF2F4;
+  margin-right: 2px;
+}
+
+.linked-in-icon {
+  font-size: 1.6rem;
+  margin-right: 2px;
+  margin-top: 1px;
+}
+
 
