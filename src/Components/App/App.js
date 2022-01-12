@@ -3,9 +3,10 @@ import { getAllProducts, updateFavorite, getAllOutfits, addNewOutfit, deleteOutf
 import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
+import OutfitsContainer from '../OutfitsContainer/OutfitsContainer';
+import Footer from '../Footer/Footer';
 import Error from '../Error/Error';
 import './App.css';
-import OutfitsContainer from '../OutfitsContainer/OutfitsContainer';
 
 class App extends Component {
   constructor() {
@@ -146,6 +147,7 @@ class App extends Component {
           }
           />
         </Routes>
+        <Footer />
       </>
     );
   }

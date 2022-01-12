@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import logo from '../../assets/Lululemon_Athletica_logo.png';
-import './Header.css';
+import { useNavigate } from 'react-router-dom';
 import Aside from '../Aside/Aside';
 import CartDropdown from '../CartDropdown/CartDropdown';
 import OutfitCartButton from '../OutfitCartButton/OutfitCartButton';
+import logo from '../../assets/red-omega.png';
+import './Header.css';
 
 const Header = ({ outfitItems, deleteItemFromOutfit, addOutfit, products }) => {
   const [hidden, setHidden] = useState(true); 
+  let navigate = useNavigate();
 
   const toggleCart = () => {
     setHidden(!hidden);
@@ -17,10 +19,11 @@ const Header = ({ outfitItems, deleteItemFromOutfit, addOutfit, products }) => {
       <Aside />
       <img 
         className='logo-img' 
-        alt='Lulu Lemon Logo' 
+        alt='lemon aide logo' 
         src={logo}
+        onClick={() => {navigate('/')}}
       />
-      <h1>Lemon Aide</h1>
+      <h1 onClick={() => {navigate('/')}}>Lemon Aide</h1>
       <OutfitCartButton 
         toggleCart={toggleCart}
         outfitItems={outfitItems}
