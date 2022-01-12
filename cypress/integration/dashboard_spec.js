@@ -143,7 +143,7 @@ describe('Lemon aide dashboard error test', () => {
       statusCode: 404
     });
     cy.visit('http://localhost:3000');
-  })
+  });
 
   it('As a user, I should see an error message when something goes wrong (e.g. server error)', () => {
     cy.get('div[class="error-container"]')
@@ -157,7 +157,7 @@ describe('Lemon aide dashboard loading test', () => {
       fixture: 'products.json',
       delay: 3000
     });
-    
+
     cy.visit('http://localhost:3000');
   });
 
