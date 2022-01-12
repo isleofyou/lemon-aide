@@ -8,11 +8,10 @@
 }
  
 .no-favorites {
-  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 550px;
+  height: 583px;
 }
 
 .heart-picture {
