@@ -1,7 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { Link, useNavigate } from 'react-router-dom';
-import logo from '../../assets/Lululemon_Athletica_logo.png';
+import { Link } from 'react-router-dom';
 import * as AiIcons from 'react-icons/ai';
 import cat from '../../assets/cat.png';
 
@@ -32,7 +31,7 @@ const Footer = () => {
       </div>
       <section class='application-name'>
         <div class='application-name-wrap'>
-          <small class='copyright'>Lemon Aide © 2021</small>
+          <small class='copyright'>Lemon Aide © 2022</small>
         </div>
       </section>
     </div>

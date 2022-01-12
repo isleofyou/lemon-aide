@@ -20,6 +20,10 @@
   font-size: 1.5rem;
 }
 
+.contact-icons:hover {
+  transform:scale(1.1);
+}
+
 .cat {
   margin: 2px;
   height: 1.5rem;
