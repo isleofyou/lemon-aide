@@ -9,8 +9,7 @@ const OutfitCard = ({ id, topProduct, bottomProduct, accessoryProduct, deleteOut
           src={topProduct.img_url}
           alt={topProduct.color + ` ` + topProduct.name }
         />
-        <p className="outfit-item-name">{topProduct.name}</p>
-        <p className="outfit-item-color">{topProduct.color}</p>
+        <p className="outfit-item-name">{topProduct.color} {topProduct.name}</p>
       </div>
 
       <div className='outfit-item-info-container'>
@@ -19,8 +18,7 @@ const OutfitCard = ({ id, topProduct, bottomProduct, accessoryProduct, deleteOut
           src={bottomProduct.img_url}
           alt={bottomProduct.color + ` ` + bottomProduct.name }
         />
-        <p className="outfit-item-name">{bottomProduct.name}</p>
-        <p className="outfit-item-color">{bottomProduct.color}</p>
+        <p className="outfit-item-name">{bottomProduct.color} {bottomProduct.name}</p>
       </div>
 
       {accessoryProduct && (
@@ -30,8 +28,7 @@ const OutfitCard = ({ id, topProduct, bottomProduct, accessoryProduct, deleteOut
             src={accessoryProduct.img_url}
             alt={accessoryProduct.color + ` ` + accessoryProduct.name }
           />
-          <p className="outfit-item-name">{accessoryProduct.name}</p>
-          <p className="outfit-item-color">{accessoryProduct.color}</p>
+          <p className="outfit-item-name">{accessoryProduct.color} {accessoryProduct.name}</p>
         </div>
       )}
 

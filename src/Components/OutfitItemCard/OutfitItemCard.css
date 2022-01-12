@@ -1,5 +1,5 @@
 .outfit-item-image {
-  width: 5vh;
+  width: 11vh;
   border-radius: 10px;
 }
 
@@ -21,6 +21,7 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   padding-top: 8px;
   padding-bottom: 8px;
