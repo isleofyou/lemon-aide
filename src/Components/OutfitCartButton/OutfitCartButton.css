@@ -1,0 +1,29 @@
+.cart-button-container {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: .98;
+}
+
+.cart-button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.cart-button:hover {
+  transform: scale(1.1);
+}
+
+.cart-item-count {
+  position: absolute;
+  font-size: 22px;
+  font-weight: bold;
+  bottom: -5px;
+  right: 18px;
+  text-align: center;
+  pointer-events: none;
+}
