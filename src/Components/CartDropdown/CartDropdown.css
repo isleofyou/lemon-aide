@@ -1,0 +1,44 @@
+.cart-dropdown {
+  position: absolute;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  box-shadow: 3px 1px 6px 5px rgb(0 0 0 / 20%);
+  border-radius: 5px;
+  background-color: white;
+  top: 90px;
+  right: 40px;
+  z-index: 5;
+}
+
+.cart-items {
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.create-outfit-button {
+  margin-top: auto;
+  cursor: pointer;
+}
+
+.exit-button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+
+.exit-dropdown-button {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.create-outfit-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
