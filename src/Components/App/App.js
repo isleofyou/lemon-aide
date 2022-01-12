@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 import ProductsContainer from '../ProductsContainer/ProductsContainer';
 import Error from '../Error/Error';
 import './App.css';
+import OutfitsContainer from '../OutfitsContainer/OutfitsContainer';
 
 class App extends Component {
   constructor() {
@@ -89,7 +90,6 @@ class App extends Component {
       });
   }
 
-  //this will need to be passed down as props to the container that holds the outfits (create new outfitsContainer component that will display each outfit via outfitCard)
   deleteOutfit = (id) => {
     return deleteOutfit(id)
       .then(deletedOutfit => {
@@ -134,6 +134,16 @@ class App extends Component {
                 products={this.state.products.filter(product => product.favorite)} 
                 addFavorite={this.addFavorite} 
                 addItemToOutfit={this.addItemToOutfit}
+              />
+            </main>
+          }
+          />
+          <Route path='/my-outfits' element={
+            <main>
+              <OutfitsContainer 
+                outfits={this.state.outfits}
+                products={this.state.products}
+                deleteOutfit={this.deleteOutfit}
               />
             </main>
           }
