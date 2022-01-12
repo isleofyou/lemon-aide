@@ -55,13 +55,19 @@ PUT A SCREENSHOT HERE
 ## Wins
 
 -Successfully being able to divide and conquer tasks and complete them in a timely manner.
+
 -Having at least two people pair and walk through a PR, request changes and gracefully making changes before the branch was merged to main.
+
 -Learning CSS tricks, useState, and different ways of doing things from each other’s work.
+
 -Our “your win is my win” attitude really guided us through many hiccups and disagreements.
 
 ## Challenges
 
 -Accidentally committing node modules and branching off of that branch caused them to persist until we created a git ignore file and removed them from every branch that was being merged. Unfortunately this skewed our contributions for lines of code that were written and deleted but the number of commits accurately depict that metric.
+
 -Accidentally committing node modules and removing them also caused one of our 3 group members to be on a different version of node which became an issue when attempting to run our Cypress tests. Fortunately this was fixed by having her uninstall and reinstall the correct version of node.
+
 -Eight day time-frame to learn about and implement a backend server, database and frontend application with 2 features.
+
 -Having so many modes of communication made it difficult for some of our team members to understand and remember what they were supposed to be working on. Luckily GH issues became a much better place to draw out, reference and delegate tasks.
