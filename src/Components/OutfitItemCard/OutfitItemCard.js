@@ -31,6 +31,3 @@ X
 }
 
 export default OutfitItemCard;
-
-
-
