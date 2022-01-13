@@ -39,6 +39,11 @@ const OutfitCard = ({ id, topProduct, bottomProduct, accessoryProduct, deleteOut
           <p className="outfit-item-name">{accessoryProduct.color} {accessoryProduct.name}</p>
         </div>
       )}
+
+      {!accessoryProduct && (
+        <div className='outfit-item-info-container'>
+        </div>
+      )}
     </article>
 
   );

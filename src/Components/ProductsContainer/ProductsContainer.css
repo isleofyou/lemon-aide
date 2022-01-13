@@ -4,14 +4,12 @@
   grid-gap: 1rem;
   padding: 20px;
   overflow: scroll;
-  height: 1000px;
 }
  
 .no-favorites {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 583px;
 }
 
 .heart-picture {

@@ -9,13 +9,13 @@ const OutfitItemCard = ({ name, color, img_url, category, deleteItemFromOutfit }
         src={img_url}
         alt={color + ` ` + name }
       />
-      <div className='outfit-item-info-container'>
-        <h2 className="outfit-item-name">
-            {name}
-          </h2>
-        <h2 className="outfit-item-color">
+      <div className='cart-outfit-item-info-container'>
+        <p className="outfit-item-name">
+          {name}
+        </p>
+        <p className="outfit-item-color">
           {color}
-        </h2>
+        </p>
       </div>
       <button
 className='remove-item-card'

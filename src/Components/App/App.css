@@ -6,4 +6,7 @@
 
 .App {
   text-align: center;
+  display: grid;
+  grid-template-rows: 85px 1fr 180px;
+  height: min(100vh);
 }

@@ -108,7 +108,7 @@ class App extends Component {
       this.state.error !== null ?
         <Error error={this.state.error} />
       :
-      <>
+      <main className='App'>
         <Header 
           outfitItems={this.state.outfitItems}
           deleteItemFromOutfit={this.deleteItemFromOutfit}
@@ -149,7 +149,7 @@ class App extends Component {
           />
         </Routes>
         <Footer />
-      </>
+      </main>
     );
   }
 };
