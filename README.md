@@ -1,28 +1,26 @@
-# Lemon Aide - Strech Tech project by Ivonne Hernandez, David Tran, and Markus Rossio. Mod 3 2108 FE
+# [Lemon Aide](https://blooming-inlet-69061.herokuapp.com/)
+
+[Lemon Aide](https://blooming-inlet-69061.herokuapp.com/) is an application that allows users to view Lululemon products, save products to a list of favorites, and create outfits.
 
 ## Table of Contents
-  - [Install + Setup](#set-up)  
+  - [Setup](#setup)  
   - [Abstract](#abstract)
   - [Architecture](#architecture)
   - [Technologies](#technologies)
   - [Contributors](#contributors)
   - [Wins](#wins)
-  - [Challenges + Improvements](#challenges-+-Improvements)
+  - [Challenges](#challenges)
   - [Project Specs](#project-specs)
 
-  ## Install & Setup
-    **To navigate the website live, a server download is required.**
-  - Download the necessary server and API [here](https://github.com/isleofyou/lemon-aide-api)
-  - Cd into the `server` directory and then into the `lemon-aide-api` directory.
-  - In the command line, run **$npm start**
-
-    **Then:**
+  ## Setup
+  - Download the [Lemon Aide API](https://github.com/isleofyou/lemon-aide-api) and follow its readme
   - clone this repo: [here](https://github.com/isleofyou/lemon-aide)
-   - On the command line, type: **$ npm install**
-   - On the command line, type: **$ npm start**
+  - `cd lemon-aide`
+  - `npm install`
+  - `npm start`
 
-   ## Project Specs
-   - The project spec & rubric can be found [here.](https://frontend.turing.edu/projects/module-3/stretch.html) The MVP chosen for this project was "building a backend."
+  ## Project Specs
+  - The project spec & rubric can be found [here.](https://frontend.turing.edu/projects/module-3/stretch.html) The MVP chosen for this project was "building a backend."
 
 ## Abstract
 
