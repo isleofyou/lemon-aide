@@ -1,6 +1,7 @@
 .menu-bars {
   font-size: 2rem;
   background: none;
+  padding-left: 20px;
 }
 
 .sidebar {
@@ -16,8 +17,7 @@
 
 .aside {
   background-color: #EDF2F4;
-  width: 25%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   position: fixed;
