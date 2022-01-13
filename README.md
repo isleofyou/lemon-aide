@@ -26,11 +26,16 @@
 
 ## Abstract
 
-PUT A SCREENSHOT HERE
+![Screen Shot 2022-01-12 at 5 37 15 PM](https://user-images.githubusercontent.com/60856601/149245083-87c2126b-65a7-4494-998e-0aa566575f1a.png)
+
 
   This application's design is rooted in a need for outfit planning. Lemon Aide allows a user to see all of their pieces of clothing,plan outfits and favorite items. The inventory is loaded from a server and changes made on the front end are mirrored on the back end. 
 
+![Screen Shot 2022-01-12 at 5 39 17 PM](https://user-images.githubusercontent.com/60856601/149245349-77805417-42d3-4c52-b05c-4bc775242b46.png)
+
   The item cards that show by default will have options to select as a piece to build an outfit and also have a heart to serve out the favorite functionality. The nav bar on the side is hidden by default, and a user can click on the hamburger to show multiple options to navigate throughout. These options include the home page, favorites, and created outfits. 
+
+![Screen Shot 2022-01-12 at 5 39 28 PM](https://user-images.githubusercontent.com/60856601/149245282-ecbea273-4128-49c7-8c7c-97b3d8b733ac.png)
 
   A footer provides the user with information about the application's contributors along with their LinkedIn and Github profiles.
 
