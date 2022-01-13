@@ -1,5 +1,7 @@
+const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : 'https://protected-bayou-83479.herokuapp.com/';
+
 const getAllProducts = () => {
-  return fetch('http://localhost:3001/api/v1/all-products')
+  return fetch(`${baseUrl}/api/v1/all-products`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`${response.status} ${response.statusText}`);
@@ -9,7 +11,7 @@ const getAllProducts = () => {
 }
 
 const updateFavorite = (id) => {
-  return fetch(`http://localhost:3001/api/v1/favorites/${id.id}`, {
+  return fetch(`${baseUrl}/api/v1/favorites/${id.id}`, {
     method: 'PUT',
     body: JSON.stringify(id),
     headers: {
@@ -25,7 +27,7 @@ const updateFavorite = (id) => {
 }
 
 const getAllOutfits = () => {
-  return fetch('http://localhost:3001/api/v1/outfits')
+  return fetch(`${baseUrl}/api/v1/outfits`)
   .then(response => {
     if (!response.ok) {
       throw new Error(`${response.status} ${response.statusText}`);
@@ -36,7 +38,7 @@ const getAllOutfits = () => {
 
 const addNewOutfit = (outfitItems) => {
   let unparsedResponse;
-  return fetch('http://localhost:3001/api/v1/outfits', {
+  return fetch(`${baseUrl}/api/v1/outfits`, {
     method: 'POST',
     body: JSON.stringify(outfitItems),
     headers: {
@@ -56,7 +58,7 @@ const addNewOutfit = (outfitItems) => {
 }
 
 const deleteOutfit = (id) => {
-  return fetch(`http://localhost:3001/api/v1/outfits/${id}`, {
+  return fetch(`${baseUrl}/api/v1/outfits/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
