@@ -1,6 +1,5 @@
 .product-card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   justify-items: center;
   box-shadow: 3px 3px 8px 0px rgb(0 0 0 / 20%);
   font-size: 12px;
@@ -30,8 +29,9 @@
 
 button {
   margin-bottom: 22px;
-  background-color:#EDF2F4;
+  background-color: #EDF2F4;
   border-radius: 10px;
+  border-color: #08080C;
   font-size: 14px;
 }
 

@@ -42,3 +42,10 @@
   justify-content: center;
   margin-top: 12px;
 }
+
+.missing-items {
+  color: #EF233C;
+  font-size: smaller;
+  display: flex;
+  justify-content: center;
+}

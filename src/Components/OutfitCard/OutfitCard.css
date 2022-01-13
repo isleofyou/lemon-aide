@@ -1,9 +1,17 @@
 .outfit-card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  justify-items: center;
+  justify-items: flex-start;
   box-shadow: 3px 3px 8px 0px rgb(0 0 0 / 20%);
   font-size: 12px;
   text-align: center;
   line-height: 22px;
+}
+
+.delete-button-container {
+  display: flex;
+  justify-content: last baseline;
+  display: flex;
+  width: 100%;
+  justify-content: end;
 }
