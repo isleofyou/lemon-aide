@@ -1,4 +1,4 @@
-const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : 'https://protected-bayou-83479.herokuapp.com/';
+const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3001' : 'https://protected-bayou-83479.herokuapp.com';
 
 const getAllProducts = () => {
   return fetch(`${baseUrl}/api/v1/all-products`)
