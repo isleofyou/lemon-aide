@@ -9,7 +9,7 @@ const Footer = () => {
     <div className='footer-container'>
       <div className='foot-links'>
         <div className='footer-link-wrapper'>
-          <div class='footer-link-items'>
+          <div className='footer-link-items'>
             <h2>Contact Us</h2>
               <div className='contact-info'>
                 <h4>Ivonne Hernandez</h4>
@@ -29,9 +29,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <section class='application-name'>
-        <div class='application-name-wrap'>
-          <small class='copyright'>Lemon Aide © 2022</small>
+      <section className='application-name'>
+        <div className='application-name-wrap'>
+          <small className='copyright'>Lemon Aide © 2022</small>
         </div>
       </section>
     </div>

@@ -5,7 +5,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 100%; 
+  bottom: 0px; 
+  left: 0px; 
 }
 
 .contact-info {
