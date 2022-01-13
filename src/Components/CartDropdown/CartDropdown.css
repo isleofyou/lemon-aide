@@ -1,6 +1,5 @@
 .cart-dropdown {
   position: absolute;
-  width: 280px;
   display: flex;
   flex-direction: column;
   padding: 4px;
@@ -22,6 +21,7 @@
 .create-outfit-button {
   margin-top: auto;
   cursor: pointer;
+  margin-bottom: 8px;
 }
 
 .exit-button-container {
@@ -43,7 +43,7 @@
   margin-top: 12px;
 }
 
-.missing-items {
+.cart-error {
   color: #EF233C;
   font-size: smaller;
   display: flex;

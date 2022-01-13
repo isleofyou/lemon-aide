@@ -57,11 +57,11 @@ const CartDropdown = ({ toggleCart, outfitItems, deleteItemFromOutfit, addOutfit
       </div>
       {
         !validateCart() &&
-        <p className='missing-items' >Both a top and bottom are required.</p>
+        <p className='cart-error'>Both a top and bottom are required.</p>
       }
       {
         checkForExistingOutfit() &&
-        <p>This outfit already exists.</p>
+        <p className='cart-error'>This outfit already exists.</p>
       }
     </div>
   );
