@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Sculpt Tank",
+    "color": "Rainforest Green",
+    "img_url": "https://images.lululemon.com/is/image/lululemon/LW1CS9S_049106_1?wid=1080&op_usm=0.5,2,10,0&fmt=webp&qlt=80,1&fit=constrain,0&op_sharpen=0&resMode=sharp2&iccEmbed=0&printRes=72",
+    "category": "top",
+    "id": 1,
+    "favorite": false
+  },
+  {
+    "name": "All Yours Tank",
+    "color": "White",
+    "img_url": "https://images.lululemon.com/is/image/lululemon/LW1CGLS_0002_1?wid=1080&op_usm=0.5,2,10,0&fmt=webp&qlt=80,1&fit=constrain,0&op_sharpen=0&resMode=sharp2&iccEmbed=0&printRes=72",
+    "category": "top",
+    "id": 2,
+    "favorite": true
+  },
+  {
+    "name": "Full Day Ahead Short Sleeve",
+    "color": "Aquila Rhino Grey Multi",
+    "img_url": "https://images.lululemon.com/is/image/lululemon/LW3EMPS_049466_1?wid=1080&op_usm=0.5,2,10,0&fmt=webp&qlt=80,1&fit=constrain,0&op_sharpen=0&resMode=sharp2&iccEmbed=0&printRes=72",
+    "category": "top",
+    "id": 3,
+    "favorite": false
+  },
+  {
+    "name": "Fast and Free HR Tight",
+    "color": "Dark Red",
+    "img_url": "https://images.lululemon.com/is/image/lululemon/LW5BXQS_028948_1?wid=1600&op_usm=0.5,2,10,0&fmt=webp&qlt=80,1&fit=constrain,0&op_sharpen=0&resMode=sharp2&iccEmbed=0&printRes=72",
+    "category": "bottom",
+    "id": 4,
+    "favorite": false
+  }
+]
+
